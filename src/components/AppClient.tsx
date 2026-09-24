@@ -1,26 +1,34 @@
 "use client";
 
 import { useState, useMemo, useCallback } from "react";
-import { GroceryItem, Store, StoreId, Basket } from "@/lib/types";
-import { computeStoreTotals, computeSmartSplit } from "@/lib/data";
+import { GroceryItem, Basket, Chain } from "@/lib/types";
+import { computeStoreTotals, computeSmartSplit, resolveBranches, resolveDefaultBranches } from "@/lib/data";
+import { AUCKLAND_SUBURBS, getNearestBranchesWithinRadius, getNearestSuburbName } from "@/lib/auckland_locations";
 import Header from "@/components/Header";
 import ComparisonGrid from "@/components/ComparisonGrid";
 import BasketPanel from "@/components/BasketPanel";
 import SmartSplitCard from "@/components/SmartSplitCard";
 import ShoppingListModal from "@/components/ShoppingListModal";
-import { List, ShoppingCart, Trash2 } from "lucide-react";
+import { List, Trash2 } from "lucide-react";
 
 interface AppClientProps {
   items: GroceryItem[];
-  stores: Store[];
+  chains: Chain[];
   lastUpdated: string;
 }
 
-export default function AppClient({ items, stores, lastUpdated }: AppClientProps) {
+export default function AppClient({ items, chains, lastUpdated }: AppClientProps) {
   const [basket, setBasket] = useState<Basket>({});
   const [modalOpen, setModalOpen] = useState(false);
+  const [coords, setCoords] = useState<{ lat: number; lng: number } | null>(null);
+  const [suburbName, setSuburbName] = useState<string>("");
 
-  const storeIds = useMemo(() => stores.map((s) => s.id as StoreId), [stores]);
+  // Branch resolution based on coords
+  const { branches: activeBranches, expanded } = useMemo(() => {
+    if (!coords) return { branches: resolveDefaultBranches(chains), expanded: false };
+    const result = getNearestBranchesWithinRadius(coords.lat, coords.lng, 5.0);
+    return { branches: resolveBranches(result.branches, chains), expanded: result.expanded };
+  }, [coords, chains]);
 
   const handleQuantityChange = useCallback((itemId: string, delta: number) => {
     setBasket((prev) => {
@@ -34,23 +42,13 @@ export default function AppClient({ items, stores, lastUpdated }: AppClientProps
   const clearBasket = useCallback(() => setBasket({}), []);
 
   const totals = useMemo(
-    () => computeStoreTotals(items, basket, storeIds),
-    [items, basket, storeIds]
+    () => computeStoreTotals(items, basket, activeBranches),
+    [items, basket, activeBranches]
   );
 
   const smartSplit = useMemo(
-    () => computeSmartSplit(items, basket, stores),
-    [items, basket, stores]
-  );
-
-  // Enrich totals with store names
-  const enrichedTotals = useMemo(
-    () =>
-      totals.map((t) => ({
-        ...t,
-        storeName: stores.find((s) => s.id === t.storeId)?.name ?? t.storeId,
-      })),
-    [totals, stores]
+    () => computeSmartSplit(items, basket, activeBranches),
+    [items, basket, activeBranches]
   );
 
   const basketItemCount = useMemo(
@@ -60,37 +58,75 @@ export default function AppClient({ items, stores, lastUpdated }: AppClientProps
 
   const hasBasketItems = basketItemCount > 0;
 
+  const handleLocateMe = () => {
+    if (!navigator.geolocation) {
+      alert("Geolocation is not supported by your browser");
+      return;
+    }
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        const { latitude, longitude } = pos.coords;
+        setCoords({ lat: latitude, lng: longitude });
+        setSuburbName(getNearestSuburbName(latitude, longitude));
+      },
+      (err) => alert("Could not fetch location: " + err.message)
+    );
+  };
+
+  const handleSelectSuburb = (name: string) => {
+    if (!name) {
+      setCoords(null);
+      setSuburbName("");
+      return;
+    }
+    const sub = AUCKLAND_SUBURBS.find(s => s.name === name);
+    if (sub) {
+      setCoords({ lat: sub.lat, lng: sub.lng });
+      setSuburbName(sub.name);
+    }
+  };
+
   return (
     <>
-      <Header stores={stores} lastUpdated={lastUpdated} />
+      <Header 
+        branches={activeBranches} 
+        lastUpdated={lastUpdated} 
+        suburbName={suburbName}
+        onSelectSuburb={handleSelectSuburb}
+        onLocateMe={handleLocateMe}
+      />
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pb-32">
         {/* Intro banner */}
         <div className="mb-6 rounded-2xl bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-100 px-5 py-4 flex items-start gap-3">
           <span className="text-2xl">🇳🇿</span>
-          <div>
+          <div className="flex-1">
             <p className="font-semibold text-slate-700 text-sm">
               Compare staple grocery prices across Auckland&apos;s major supermarkets.
             </p>
             <p className="text-slate-500 text-xs mt-0.5">
-              Add items to your basket with the{" "}
-              <span className="font-bold text-amber-600">+</span> buttons to see real-time totals
-              and find the best deal — or split your run across multiple stores.
+              Select your suburb to find the nearest branches and see their specific prices. Add items to your basket to calculate the <b>Smart Split</b> savings.
             </p>
           </div>
         </div>
 
+        {expanded && coords && (
+          <div className="mb-6 rounded-xl bg-blue-50 border border-blue-200 p-3 text-sm text-blue-700">
+            <strong>Note:</strong> Expanded radius to find your nearest branches.
+          </div>
+        )}
+
         <ComparisonGrid
           items={items}
-          stores={stores}
+          branches={activeBranches}
           basket={basket}
           onQuantityChange={handleQuantityChange}
         />
 
-        <BasketPanel stores={stores} totals={enrichedTotals} basketItemCount={basketItemCount} />
+        <BasketPanel branches={activeBranches} totals={totals} basketItemCount={basketItemCount} />
 
         {hasBasketItems && (
-          <SmartSplitCard result={smartSplit} stores={stores} />
+          <SmartSplitCard result={smartSplit} branches={activeBranches} />
         )}
       </main>
 
@@ -134,7 +170,7 @@ export default function AppClient({ items, stores, lastUpdated }: AppClientProps
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}
         result={smartSplit}
-        stores={stores}
+        branches={activeBranches}
       />
     </>
   );

@@ -1,166 +1,124 @@
-"use client";
-
-import { GroceryItem, Store, StoreId, Basket } from "@/lib/types";
-import { getCheapestStoreForItem } from "@/lib/data";
-import { Plus, Minus, Package } from "lucide-react";
+import { GroceryItem, Basket, ResolvedBranch } from "@/lib/types";
+import { getCheapestBranchForItem } from "@/lib/data";
+import { Minus, Plus, BadgeCheck } from "lucide-react";
 
 interface ComparisonGridProps {
   items: GroceryItem[];
-  stores: Store[];
+  branches: ResolvedBranch[];
   basket: Basket;
   onQuantityChange: (itemId: string, delta: number) => void;
 }
 
-function StoreHeaderCell({ store }: { store: Store }) {
-  return (
-    <div
-      className="rounded-xl px-3 py-2.5 text-center font-bold text-sm shadow-sm"
-      style={{ backgroundColor: store.color, color: store.textColor }}
-    >
-      <span className="block text-base">{store.logoEmoji}</span>
-      <span className="leading-tight">{store.shortName}</span>
-    </div>
-  );
-}
-
-interface PriceCellProps {
-  item: GroceryItem;
-  store: Store;
-  isCheapest: boolean;
-}
-
-function PriceCell({ item, store, isCheapest }: PriceCellProps) {
-  const priceEntry = item.prices[store.id as StoreId];
-
-  if (!priceEntry || !priceEntry.inStock || priceEntry.price === null) {
-    return (
-      <div className="flex flex-col items-center justify-center h-full min-h-[3.5rem] text-slate-400">
-        <Package className="w-4 h-4 mb-0.5" />
-        <span className="text-xs">N/A</span>
-      </div>
-    );
-  }
-
-  return (
-    <div className="flex flex-col items-center justify-center h-full min-h-[3.5rem] gap-0.5 relative">
-      {isCheapest && (
-        <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-emerald-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full whitespace-nowrap shadow-sm">
-          ✓ Best
-        </span>
-      )}
-      <span
-        className={`text-lg font-extrabold tabular-nums ${
-          isCheapest ? "text-emerald-600" : "text-slate-800"
-        }`}
-      >
-        ${priceEntry.price.toFixed(2)}
-      </span>
-      <span className="text-[10px] text-slate-400 leading-none text-center">
-        {priceEntry.brandLabel}
-      </span>
-    </div>
-  );
-}
-
-export default function ComparisonGrid({
-  items,
-  stores,
-  basket,
-  onQuantityChange,
-}: ComparisonGridProps) {
+export default function ComparisonGrid({ items, branches, basket, onQuantityChange }: ComparisonGridProps) {
   // Group items by category
   const categories = Array.from(new Set(items.map((i) => i.category)));
 
   return (
-    <section className="mt-6">
-      <h2 className="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
-        <span>📊</span> Price Comparison
-      </h2>
+    <div className="space-y-8">
+      {categories.map((category) => {
+        const catItems = items.filter((i) => i.category === category);
+        return (
+          <section key={category}>
+            <h2 className="text-xl font-bold text-slate-900 mb-4 px-2">{category}</h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+              {catItems.map((item) => {
+                const qty = basket[item.id] || 0;
+                const cheapestBranchId = getCheapestBranchForItem(item, branches);
 
-      <div className="overflow-x-auto -mx-4 sm:mx-0 pb-2">
-        <div className="min-w-[640px] px-4 sm:px-0">
-          {/* Store header row */}
-          <div className="grid grid-cols-[minmax(160px,2fr)_auto_repeat(4,1fr)] gap-2 mb-4 items-end">
-            <div className="text-xs text-slate-500 font-medium pb-1">Item</div>
-            <div className="text-xs text-slate-500 font-medium pb-1 text-center w-20">Qty</div>
-            {stores.map((store) => (
-              <StoreHeaderCell key={store.id} store={store} />
-            ))}
-          </div>
-
-          {/* Items by category */}
-          {categories.map((category) => (
-            <div key={category} className="mb-5">
-              <div className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 px-1">
-                {category}
-              </div>
-              <div className="space-y-2">
-                {items
-                  .filter((i) => i.category === category)
-                  .map((item) => {
-                    const cheapestStoreId = getCheapestStoreForItem(item);
-                    const qty = basket[item.id] ?? 0;
-                    return (
-                      <div
-                        key={item.id}
-                        className={`grid grid-cols-[minmax(160px,2fr)_auto_repeat(4,1fr)] gap-2 items-center rounded-xl border px-3 py-3 transition-all ${
-                          qty > 0
-                            ? "bg-amber-50 border-amber-200 shadow-sm"
-                            : "bg-white border-slate-100 hover:border-slate-200"
-                        }`}
-                      >
-                        {/* Item info */}
-                        <div className="flex items-start gap-2 min-w-0">
-                          <span className="text-xl shrink-0 mt-0.5">{item.emoji}</span>
-                          <div className="min-w-0">
-                            <p className="font-semibold text-slate-800 text-sm leading-tight truncate">
-                              {item.name}
-                            </p>
-                            <p className="text-[11px] text-slate-400 mt-0.5 truncate">
-                              {item.description}
-                            </p>
-                          </div>
+                return (
+                  <div key={item.id} className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                    
+                    {/* Item Header */}
+                    <div className="p-4 border-b border-slate-100 bg-slate-50/50 flex justify-between items-start">
+                      <div className="flex items-start gap-3">
+                        <span className="text-3xl" aria-hidden="true">{item.emoji}</span>
+                        <div>
+                          <h3 className="font-bold text-slate-800 leading-tight">{item.name}</h3>
+                          <p className="text-xs text-slate-500 mt-1">{item.description}</p>
                         </div>
-
-                        {/* Stepper */}
-                        <div className="flex items-center gap-1 w-20 justify-center">
-                          <button
-                            onClick={() => onQuantityChange(item.id, -1)}
-                            disabled={qty === 0}
-                            aria-label={`Remove one ${item.name}`}
-                            className="w-7 h-7 rounded-full flex items-center justify-center bg-slate-100 hover:bg-slate-200 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
-                          >
-                            <Minus className="w-3 h-3 text-slate-600" />
-                          </button>
-                          <span className="w-5 text-center font-bold text-slate-700 text-sm tabular-nums">
-                            {qty}
-                          </span>
-                          <button
-                            onClick={() => onQuantityChange(item.id, 1)}
-                            aria-label={`Add one ${item.name}`}
-                            className="w-7 h-7 rounded-full flex items-center justify-center bg-amber-400 hover:bg-amber-500 text-slate-900 transition-colors"
-                          >
-                            <Plus className="w-3 h-3" />
-                          </button>
-                        </div>
-
-                        {/* Price cells */}
-                        {stores.map((store) => (
-                          <PriceCell
-                            key={store.id}
-                            item={item}
-                            store={store}
-                            isCheapest={cheapestStoreId === store.id}
-                          />
-                        ))}
                       </div>
-                    );
-                  })}
-              </div>
+                      
+                      {/* Stepper */}
+                      <div className="flex items-center bg-white border border-slate-200 rounded-lg shadow-sm">
+                        <button
+                          onClick={() => onQuantityChange(item.id, -1)}
+                          disabled={qty === 0}
+                          className="p-1.5 text-slate-400 hover:text-slate-700 disabled:opacity-30 transition-colors"
+                          aria-label="Decrease quantity"
+                        >
+                          <Minus className="w-4 h-4" />
+                        </button>
+                        <span className="w-6 text-center text-sm font-bold text-slate-800 select-none">
+                          {qty}
+                        </span>
+                        <button
+                          onClick={() => onQuantityChange(item.id, 1)}
+                          className="p-1.5 text-slate-400 hover:text-amber-600 transition-colors"
+                          aria-label="Increase quantity"
+                        >
+                          <Plus className="w-4 h-4" />
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Price Grid (2x2) */}
+                    <div className="grid grid-cols-2 divide-x divide-y divide-slate-100 border-t border-slate-100">
+                      {branches.map((branch) => {
+                        const priceEntry = item.prices[branch.branchId];
+                        const isCheapest = branch.branchId === cheapestBranchId;
+                        const hasPrice = priceEntry && priceEntry.inStock && priceEntry.price !== null;
+
+                        return (
+                          <div 
+                            key={branch.branchId} 
+                            className={`p-3 relative ${isCheapest ? 'bg-emerald-50/30' : 'bg-white'}`}
+                          >
+                            <div className="flex items-center gap-1.5 mb-1.5">
+                              <span className="text-sm">{branch.logoEmoji}</span>
+                              <span className="text-xs font-bold text-slate-700 truncate" title={branch.branchDisplayName}>
+                                {branch.branchDisplayName}
+                              </span>
+                            </div>
+                            
+                            {hasPrice ? (
+                              <div>
+                                <div className="flex items-baseline gap-1">
+                                  <span className="text-lg font-black text-slate-900">
+                                    ${priceEntry.price?.toFixed(2)}
+                                  </span>
+                                  {isCheapest && (
+                                    <BadgeCheck className="w-4 h-4 text-emerald-500" aria-label="Lowest price" />
+                                  )}
+                                </div>
+                                <div className="text-[10px] text-slate-400 font-medium truncate mt-0.5">
+                                  {priceEntry.brandLabel}
+                                </div>
+                              </div>
+                            ) : (
+                              <div className="flex items-center h-[42px]">
+                                <span className="text-sm font-medium text-slate-300">N/A</span>
+                              </div>
+                            )}
+
+                            {branch.distanceKm !== null && (
+                              <div className="absolute top-3 right-3 text-[9px] font-medium text-slate-400">
+                                {branch.distanceKm}km
+                              </div>
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+
+                  </div>
+                );
+              })}
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
+            
+          </section>
+        );
+      })}
+    </div>
   );
 }
