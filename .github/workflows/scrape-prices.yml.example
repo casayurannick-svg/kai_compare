@@ -1,0 +1,98 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# KaiCompare Auckland — Automated Price Scraper Blueprint
+# ─────────────────────────────────────────────────────────────────────────────
+#
+# HOW IT WORKS:
+#   1. This workflow runs on a daily cron at 06:00 NZST (18:00 UTC).
+#   2. A Python scraper fetches current prices from supermarket websites.
+#   3. It writes/overwrites `data/auckland_staples.json` in the repository.
+#   4. The updated JSON is committed back to main via git.
+#   5. Vercel detects the push and triggers a zero-cost static rebuild (ISR).
+#
+# COST: $0 — GitHub Actions Free Tier includes 2,000 min/month for public repos.
+#        Vercel Hobby tier rebuilds are free and triggered automatically.
+#
+# SETUP REQUIRED (one-time):
+#   - In GitHub repo Settings → Secrets → Actions, add:
+#       SCRAPER_USER_AGENT  (your scraper UA string, e.g. "KaiCompare/1.0")
+#   - Ensure the repo has "Read and write permissions" under
+#     Settings → Actions → General → Workflow permissions.
+# ─────────────────────────────────────────────────────────────────────────────
+
+name: Scrape & Update Prices
+
+on:
+  schedule:
+    # Daily at 06:00 NZST = 18:00 UTC (UTC+12 offset)
+    - cron: "0 18 * * *"
+  workflow_dispatch: # Allow manual trigger from GitHub UI
+
+permissions:
+  contents: write # Required to push updated JSON
+
+jobs:
+  scrape-prices:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      # 1. Checkout repo
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # 2. Set up Python
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      # 3. Install scraper dependencies
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install requests beautifulsoup4 lxml httpx playwright
+
+      # 4. Run the price scraper
+      #    ─ Replace this with your actual scraper script ─
+      #    The scraper must write valid JSON to data/auckland_staples.json
+      #    matching the schema defined in src/lib/types.ts (PriceDataset).
+      - name: Run price scraper
+        env:
+          SCRAPER_USER_AGENT: ${{ secrets.SCRAPER_USER_AGENT }}
+        run: |
+          # python scripts/scrape_prices.py
+          echo "⚠️  Scraper script not yet implemented."
+          echo "Create scripts/scrape_prices.py that fetches live prices and"
+          echo "outputs data/auckland_staples.json in the PriceDataset schema."
+
+      # 5. Check if anything changed
+      - name: Check for price changes
+        id: check_diff
+        run: |
+          if git diff --quiet data/auckland_staples.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No price changes detected."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "Price changes detected — will commit."
+          fi
+
+      # 6. Commit and push updated prices
+      - name: Commit updated prices
+        if: steps.check_diff.outputs.changed == 'true'
+        run: |
+          git config user.name "KaiCompare Bot"
+          git config user.email "bot@kaicompare.nz"
+          git add data/auckland_staples.json
+          git commit -m "chore(prices): auto-update Auckland grocery prices [$(date -u +%Y-%m-%d)]"
+          git push
+
+      # 7. Vercel auto-detects the push and triggers a free rebuild.
+      #    No extra step needed for Vercel Hobby tier — just connect your
+      #    GitHub repo in the Vercel dashboard and set:
+      #      - Build Command: npm run build
+      #      - Output Directory: .next
+      #      - Framework Preset: Next.js

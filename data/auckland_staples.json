@@ -1,0 +1,175 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "region": "Auckland, New Zealand",
+    "currency": "NZD",
+    "lastUpdatedIso": "2026-09-24T08:00:00.000Z",
+    "note": "Prices are illustrative and manually verified. Replace with automated scraper output."
+  },
+  "stores": [
+    {
+      "id": "paknsave",
+      "name": "PAK'nSAVE",
+      "shortName": "PAK'nSAVE",
+      "color": "#FFD700",
+      "textColor": "#1a1a1a",
+      "branches": ["Royal Oak", "Sylvia Park", "Lincoln Rd", "Māngere"],
+      "logoEmoji": "🟡"
+    },
+    {
+      "id": "woolworths",
+      "name": "Woolworths NZ",
+      "shortName": "Woolworths",
+      "color": "#00AA46",
+      "textColor": "#ffffff",
+      "branches": ["CBD", "Ponsonby", "Newmarket", "Mt Roskill"],
+      "logoEmoji": "🟢"
+    },
+    {
+      "id": "newworld",
+      "name": "New World",
+      "shortName": "New World",
+      "color": "#E31837",
+      "textColor": "#ffffff",
+      "branches": ["Victoria Park", "Metro City", "Remuera", "Ponsonby"],
+      "logoEmoji": "🔴"
+    },
+    {
+      "id": "warehouse",
+      "name": "The Warehouse",
+      "shortName": "Warehouse",
+      "color": "#CC0000",
+      "textColor": "#ffffff",
+      "branches": ["Manukau", "Henderson", "Albany", "Botany"],
+      "logoEmoji": "🔴"
+    }
+  ],
+  "items": [
+    {
+      "id": "white-rice-1kg",
+      "name": "Long Grain White Rice",
+      "description": "1kg bag",
+      "category": "Pantry",
+      "unitMeasure": "1kg",
+      "emoji": "🍚",
+      "prices": {
+        "paknsave":  { "price": 2.49, "brandLabel": "Pams",          "inStock": true,  "unitPrice": 2.49, "lastUpdatedIso": "2026-09-24T08:00:00.000Z" },
+        "woolworths":{ "price": 2.99, "brandLabel": "Essentials",    "inStock": true,  "unitPrice": 2.99, "lastUpdatedIso": "2026-09-24T08:00:00.000Z" },
+        "newworld":  { "price": 3.29, "brandLabel": "Value",         "inStock": true,  "unitPrice": 3.29, "lastUpdatedIso": "2026-09-24T08:00:00.000Z" },
+        "warehouse": { "price": 2.79, "brandLabel": "Signature Range","inStock": true, "unitPrice": 2.79, "lastUpdatedIso": "2026-09-24T08:00:00.000Z" }
+      }
+    },
+    {
+      "id": "sandwich-bread-700g",
+      "name": "White Sandwich Bread",
+      "description": "Loaf ~700g",
+      "category": "Bakery",
+      "unitMeasure": "700g loaf",
+      "emoji": "🍞",
+      "prices": {
+        "paknsave":  { "price": 1.89, "brandLabel": "Pams",          "inStock": true,  "unitPrice": 2.70, "lastUpdatedIso": "2026-09-24T08:00:00.000Z" },
+        "woolworths":{ "price": 2.29, "brandLabel": "Wonder White",  "inStock": true,  "unitPrice": 3.27, "lastUpdatedIso": "2026-09-24T08:00:00.000Z" },
+        "newworld":  { "price": 2.49, "brandLabel": "Tip Top",       "inStock": true,  "unitPrice": 3.56, "lastUpdatedIso": "2026-09-24T08:00:00.000Z" },
+        "warehouse": { "price": 2.00, "brandLabel": "Signature Range","inStock": true, "unitPrice": 2.86, "lastUpdatedIso": "2026-09-24T08:00:00.000Z" }
+      }
+    },
+    {
+      "id": "eggs-dozen",
+      "name": "Standard Eggs",
+      "description": "Dozen, Grade 6/7",
+      "category": "Dairy & Eggs",
+      "unitMeasure": "12 eggs",
+      "emoji": "🥚",
+      "prices": {
+        "paknsave":  { "price": 6.99, "brandLabel": "Pams Barn",     "inStock": true,  "unitPrice": 0.58, "lastUpdatedIso": "2026-09-24T08:00:00.000Z" },
+        "woolworths":{ "price": 7.99, "brandLabel": "Essentials",    "inStock": true,  "unitPrice": 0.67, "lastUpdatedIso": "2026-09-24T08:00:00.000Z" },
+        "newworld":  { "price": 8.49, "brandLabel": "Value",         "inStock": true,  "unitPrice": 0.71, "lastUpdatedIso": "2026-09-24T08:00:00.000Z" },
+        "warehouse": { "price": 7.49, "brandLabel": "Signature Range","inStock": true, "unitPrice": 0.62, "lastUpdatedIso": "2026-09-24T08:00:00.000Z" }
+      }
+    },
+    {
+      "id": "plain-flour-1-5kg",
+      "name": "Plain White Flour",
+      "description": "1.5kg bag",
+      "category": "Pantry",
+      "unitMeasure": "1.5kg",
+      "emoji": "🌾",
+      "prices": {
+        "paknsave":  { "price": 2.29, "brandLabel": "Champion",      "inStock": true,  "unitPrice": 1.53, "lastUpdatedIso": "2026-09-24T08:00:00.000Z" },
+        "woolworths":{ "price": 2.79, "brandLabel": "Champion",      "inStock": true,  "unitPrice": 1.86, "lastUpdatedIso": "2026-09-24T08:00:00.000Z" },
+        "newworld":  { "price": 2.99, "brandLabel": "Champion",      "inStock": true,  "unitPrice": 1.99, "lastUpdatedIso": "2026-09-24T08:00:00.000Z" },
+        "warehouse": { "price": 2.49, "brandLabel": "Signature Range","inStock": true, "unitPrice": 1.66, "lastUpdatedIso": "2026-09-24T08:00:00.000Z" }
+      }
+    },
+    {
+      "id": "standard-milk-2l",
+      "name": "Standard Milk",
+      "description": "2L bottle (Homogenised)",
+      "category": "Dairy & Eggs",
+      "unitMeasure": "2L",
+      "emoji": "🥛",
+      "prices": {
+        "paknsave":  { "price": 3.49, "brandLabel": "Pams",          "inStock": true,  "unitPrice": 1.75, "lastUpdatedIso": "2026-09-24T08:00:00.000Z" },
+        "woolworths":{ "price": 3.89, "brandLabel": "Anchor",        "inStock": true,  "unitPrice": 1.95, "lastUpdatedIso": "2026-09-24T08:00:00.000Z" },
+        "newworld":  { "price": 3.99, "brandLabel": "Meadow Fresh",  "inStock": true,  "unitPrice": 2.00, "lastUpdatedIso": "2026-09-24T08:00:00.000Z" },
+        "warehouse": { "price": 3.59, "brandLabel": "Signature Range","inStock": true, "unitPrice": 1.80, "lastUpdatedIso": "2026-09-24T08:00:00.000Z" }
+      }
+    },
+    {
+      "id": "edam-cheese-1kg",
+      "name": "Edam Cheese",
+      "description": "1kg block",
+      "category": "Dairy & Eggs",
+      "unitMeasure": "1kg",
+      "emoji": "🧀",
+      "prices": {
+        "paknsave":  { "price": 9.99, "brandLabel": "Pams",          "inStock": true,  "unitPrice": 9.99, "lastUpdatedIso": "2026-09-24T08:00:00.000Z" },
+        "woolworths":{ "price": 11.99,"brandLabel": "Mainland",      "inStock": true,  "unitPrice": 11.99,"lastUpdatedIso": "2026-09-24T08:00:00.000Z" },
+        "newworld":  { "price": 12.49,"brandLabel": "Anchor",        "inStock": true,  "unitPrice": 12.49,"lastUpdatedIso": "2026-09-24T08:00:00.000Z" },
+        "warehouse": { "price": 10.99,"brandLabel": "Signature Range","inStock": true, "unitPrice": 10.99,"lastUpdatedIso": "2026-09-24T08:00:00.000Z" }
+      }
+    },
+    {
+      "id": "butter-500g",
+      "name": "Creamery Butter",
+      "description": "500g block, unsalted or salted",
+      "category": "Dairy & Eggs",
+      "unitMeasure": "500g",
+      "emoji": "🧈",
+      "prices": {
+        "paknsave":  { "price": 5.49, "brandLabel": "Pams",          "inStock": true,  "unitPrice": 10.98,"lastUpdatedIso": "2026-09-24T08:00:00.000Z" },
+        "woolworths":{ "price": 6.49, "brandLabel": "Anchor",        "inStock": true,  "unitPrice": 12.98,"lastUpdatedIso": "2026-09-24T08:00:00.000Z" },
+        "newworld":  { "price": 6.99, "brandLabel": "Lewis Road",    "inStock": true,  "unitPrice": 13.98,"lastUpdatedIso": "2026-09-24T08:00:00.000Z" },
+        "warehouse": { "price": 5.99, "brandLabel": "Signature Range","inStock": true, "unitPrice": 11.98,"lastUpdatedIso": "2026-09-24T08:00:00.000Z" }
+      }
+    },
+    {
+      "id": "pork-chops-1kg",
+      "name": "Pork Chops",
+      "description": "Per kg (bone-in loin chops)",
+      "category": "Meat",
+      "unitMeasure": "per kg",
+      "emoji": "🥩",
+      "prices": {
+        "paknsave":  { "price": 10.99,"brandLabel": "NZ Pork",       "inStock": true,  "unitPrice": 10.99,"lastUpdatedIso": "2026-09-24T08:00:00.000Z" },
+        "woolworths":{ "price": 13.99,"brandLabel": "NZ Pork",       "inStock": true,  "unitPrice": 13.99,"lastUpdatedIso": "2026-09-24T08:00:00.000Z" },
+        "newworld":  { "price": 14.99,"brandLabel": "Premium NZ",    "inStock": true,  "unitPrice": 14.99,"lastUpdatedIso": "2026-09-24T08:00:00.000Z" },
+        "warehouse": { "price": null, "brandLabel": null,            "inStock": false, "unitPrice": null, "lastUpdatedIso": "2026-09-24T08:00:00.000Z" }
+      }
+    },
+    {
+      "id": "beef-mince-1kg",
+      "name": "Beef Mince",
+      "description": "Per kg, standard/prime",
+      "category": "Meat",
+      "unitMeasure": "per kg",
+      "emoji": "🥩",
+      "prices": {
+        "paknsave":  { "price": 12.99,"brandLabel": "NZ Beef",       "inStock": true,  "unitPrice": 12.99,"lastUpdatedIso": "2026-09-24T08:00:00.000Z" },
+        "woolworths":{ "price": 14.99,"brandLabel": "NZ Beef",       "inStock": true,  "unitPrice": 14.99,"lastUpdatedIso": "2026-09-24T08:00:00.000Z" },
+        "newworld":  { "price": 15.99,"brandLabel": "Premium NZ",    "inStock": true,  "unitPrice": 15.99,"lastUpdatedIso": "2026-09-24T08:00:00.000Z" },
+        "warehouse": { "price": null, "brandLabel": null,            "inStock": false, "unitPrice": null, "lastUpdatedIso": "2026-09-24T08:00:00.000Z" }
+      }
+    }
+  ]
+}
