@@ -3,7 +3,7 @@
     "version": "2.0.0",
     "region": "Auckland, New Zealand",
     "currency": "NZD",
-    "lastUpdatedIso": "2026-09-28T21:33:24.317Z",
+    "lastUpdatedIso": "2026-09-29T20:25:20.889Z",
     "note": "Branch-level pricing. CBD/premium-suburb stores carry a small location premium. Automated via GitHub Actions daily cron."
   },
   "chains": [
@@ -280,168 +280,168 @@
           "brandLabel": "Pams",
           "inStock": true,
           "unitPrice": 2.49,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-sylvia-park": {
-          "price": 2.49,
+          "price": 2.5,
           "brandLabel": "Pams",
           "inStock": true,
-          "unitPrice": 2.49,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "unitPrice": 2.5,
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-albany": {
           "price": 2.54,
           "brandLabel": "Pams",
           "inStock": true,
           "unitPrice": 2.54,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-lincoln-rd": {
           "price": 2.51,
           "brandLabel": "Pams",
           "inStock": true,
           "unitPrice": 2.51,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-manukau": {
           "price": 2.5,
           "brandLabel": "Pams",
           "inStock": true,
           "unitPrice": 2.5,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-ormiston": {
-          "price": 2.45,
+          "price": 2.47,
           "brandLabel": "Pams",
           "inStock": true,
-          "unitPrice": 2.45,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "unitPrice": 2.47,
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-mt-albert": {
-          "price": 2.41,
+          "price": 2.46,
           "brandLabel": "Pams",
           "inStock": true,
-          "unitPrice": 2.41,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "unitPrice": 2.46,
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-ponsonby": {
           "price": 3.04,
           "brandLabel": "Essentials",
           "inStock": true,
           "unitPrice": 3.04,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-takapuna": {
           "price": 2.99,
           "brandLabel": "Essentials",
           "inStock": true,
           "unitPrice": 2.99,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-westgate": {
           "price": 2.97,
           "brandLabel": "Essentials",
           "inStock": true,
           "unitPrice": 2.97,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-manukau": {
           "price": 2.99,
           "brandLabel": "Essentials",
           "inStock": true,
           "unitPrice": 2.99,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-quay-st": {
           "price": 3.22,
           "brandLabel": "Essentials",
           "inStock": true,
           "unitPrice": 3.22,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-newmarket": {
           "price": 3.05,
           "brandLabel": "Essentials",
           "inStock": true,
           "unitPrice": 3.05,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-victoria-park": {
           "price": 3.49,
           "brandLabel": "Value",
           "inStock": true,
           "unitPrice": 3.49,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-browns-bay": {
           "price": 3.21,
           "brandLabel": "Value",
           "inStock": true,
           "unitPrice": 3.21,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-new-lynn": {
           "price": 3.32,
           "brandLabel": "Value",
           "inStock": true,
           "unitPrice": 3.32,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-papatoetoe": {
           "price": 3.21,
           "brandLabel": "Value",
           "inStock": true,
           "unitPrice": 3.21,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-remuera": {
           "price": 3.52,
           "brandLabel": "Value",
           "inStock": true,
           "unitPrice": 3.52,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-albany": {
           "price": 3.3,
           "brandLabel": "Value",
           "inStock": true,
           "unitPrice": 3.3,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-atrium-cbd": {
           "price": 2.93,
           "brandLabel": "Signature Range",
           "inStock": true,
           "unitPrice": 2.93,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-glenfield": {
           "price": 2.81,
           "brandLabel": "Signature Range",
           "inStock": true,
           "unitPrice": 2.81,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-westcity": {
           "price": 2.79,
           "brandLabel": "Signature Range",
           "inStock": true,
           "unitPrice": 2.79,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-manukau": {
           "price": 2.78,
           "brandLabel": "Signature Range",
           "inStock": true,
           "unitPrice": 2.78,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-sylvia-park": {
           "price": 2.84,
           "brandLabel": "Signature Range",
           "inStock": true,
           "unitPrice": 2.84,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         }
       }
     },
@@ -458,168 +458,168 @@
           "brandLabel": "Pams",
           "inStock": true,
           "unitPrice": 2.74,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-sylvia-park": {
           "price": 1.92,
           "brandLabel": "Pams",
           "inStock": true,
           "unitPrice": 2.74,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-albany": {
           "price": 1.88,
           "brandLabel": "Pams",
           "inStock": true,
           "unitPrice": 2.69,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-lincoln-rd": {
           "price": 1.88,
           "brandLabel": "Pams",
           "inStock": true,
           "unitPrice": 2.69,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-manukau": {
           "price": 1.89,
           "brandLabel": "Pams",
           "inStock": true,
           "unitPrice": 2.7,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-ormiston": {
           "price": 1.86,
           "brandLabel": "Pams",
           "inStock": true,
           "unitPrice": 2.65,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-mt-albert": {
-          "price": 1.89,
+          "price": 1.86,
           "brandLabel": "Pams",
           "inStock": true,
-          "unitPrice": 2.7,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "unitPrice": 2.66,
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-ponsonby": {
-          "price": 2.41,
+          "price": 2.44,
           "brandLabel": "Wonder White",
           "inStock": true,
-          "unitPrice": 3.44,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "unitPrice": 3.48,
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-takapuna": {
           "price": 2.29,
           "brandLabel": "Wonder White",
           "inStock": true,
           "unitPrice": 3.27,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-westgate": {
           "price": 2.27,
           "brandLabel": "Wonder White",
           "inStock": true,
           "unitPrice": 3.24,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-manukau": {
           "price": 2.25,
           "brandLabel": "Wonder White",
           "inStock": true,
           "unitPrice": 3.21,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-quay-st": {
           "price": 2.54,
           "brandLabel": "Wonder White",
           "inStock": true,
           "unitPrice": 3.63,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-newmarket": {
           "price": 2.39,
           "brandLabel": "Wonder White",
           "inStock": true,
           "unitPrice": 3.41,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-victoria-park": {
           "price": 2.59,
           "brandLabel": "Tip Top",
           "inStock": true,
           "unitPrice": 3.7,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-browns-bay": {
           "price": 2.49,
           "brandLabel": "Tip Top",
           "inStock": true,
           "unitPrice": 3.56,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-new-lynn": {
           "price": 2.52,
           "brandLabel": "Tip Top",
           "inStock": true,
           "unitPrice": 3.61,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-papatoetoe": {
-          "price": 2.39,
+          "price": 2.4,
           "brandLabel": "Tip Top",
           "inStock": true,
-          "unitPrice": 3.41,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "unitPrice": 3.42,
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-remuera": {
           "price": 2.63,
           "brandLabel": "Tip Top",
           "inStock": true,
           "unitPrice": 3.76,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-albany": {
           "price": 2.49,
           "brandLabel": "Tip Top",
           "inStock": true,
           "unitPrice": 3.56,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-atrium-cbd": {
           "price": 2.1,
           "brandLabel": "Signature Range",
           "inStock": true,
           "unitPrice": 3,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-glenfield": {
           "price": 2.05,
           "brandLabel": "Signature Range",
           "inStock": true,
           "unitPrice": 2.93,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-westcity": {
           "price": 1.99,
           "brandLabel": "Signature Range",
           "inStock": true,
           "unitPrice": 2.85,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-manukau": {
           "price": 2,
           "brandLabel": "Signature Range",
           "inStock": true,
           "unitPrice": 2.87,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-sylvia-park": {
           "price": 2,
           "brandLabel": "Signature Range",
           "inStock": true,
           "unitPrice": 2.86,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         }
       }
     },
@@ -632,172 +632,172 @@
       "emoji": "🥚",
       "prices": {
         "pns-royal-oak": {
-          "price": 6.95,
+          "price": 6.99,
           "brandLabel": "Pams Barn",
           "inStock": true,
           "unitPrice": 0.58,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-sylvia-park": {
           "price": 6.99,
           "brandLabel": "Pams Barn",
           "inStock": true,
           "unitPrice": 0.58,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-albany": {
           "price": 6.96,
           "brandLabel": "Pams Barn",
           "inStock": true,
           "unitPrice": 0.58,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-lincoln-rd": {
-          "price": 7.06,
+          "price": 7.09,
           "brandLabel": "Pams Barn",
           "inStock": true,
           "unitPrice": 0.58,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-manukau": {
           "price": 6.99,
           "brandLabel": "Pams Barn",
           "inStock": true,
           "unitPrice": 0.58,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-ormiston": {
           "price": 6.99,
           "brandLabel": "Pams Barn",
           "inStock": true,
           "unitPrice": 0.58,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-mt-albert": {
           "price": 7,
           "brandLabel": "Pams Barn",
           "inStock": true,
           "unitPrice": 0.58,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-ponsonby": {
           "price": 8.16,
           "brandLabel": "Essentials",
           "inStock": true,
           "unitPrice": 0.68,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-takapuna": {
           "price": 7.99,
           "brandLabel": "Essentials",
           "inStock": true,
           "unitPrice": 0.67,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-westgate": {
           "price": 7.96,
           "brandLabel": "Essentials",
           "inStock": true,
           "unitPrice": 0.67,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-manukau": {
           "price": 7.99,
           "brandLabel": "Essentials",
           "inStock": true,
           "unitPrice": 0.67,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-quay-st": {
-          "price": 8.34,
+          "price": 8.37,
           "brandLabel": "Essentials",
           "inStock": true,
           "unitPrice": 0.69,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-newmarket": {
           "price": 8.26,
           "brandLabel": "Essentials",
           "inStock": true,
           "unitPrice": 0.68,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-victoria-park": {
           "price": 8.65,
           "brandLabel": "Value",
           "inStock": true,
           "unitPrice": 0.72,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-browns-bay": {
           "price": 8.47,
           "brandLabel": "Value",
           "inStock": true,
           "unitPrice": 0.71,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-new-lynn": {
-          "price": 8.49,
+          "price": 8.52,
           "brandLabel": "Value",
           "inStock": true,
           "unitPrice": 0.71,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-papatoetoe": {
           "price": 8.32,
           "brandLabel": "Value",
           "inStock": true,
           "unitPrice": 0.69,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-remuera": {
           "price": 8.68,
           "brandLabel": "Value",
           "inStock": true,
           "unitPrice": 0.72,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-albany": {
           "price": 8.4,
           "brandLabel": "Value",
           "inStock": true,
           "unitPrice": 0.71,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-atrium-cbd": {
-          "price": 7.59,
+          "price": 7.56,
           "brandLabel": "Signature Range",
           "inStock": true,
           "unitPrice": 0.63,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-glenfield": {
-          "price": 7.49,
+          "price": 7.48,
           "brandLabel": "Signature Range",
           "inStock": true,
           "unitPrice": 0.62,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-westcity": {
           "price": 7.52,
           "brandLabel": "Signature Range",
           "inStock": true,
           "unitPrice": 0.62,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-manukau": {
           "price": 7.49,
           "brandLabel": "Signature Range",
           "inStock": true,
           "unitPrice": 0.62,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-sylvia-park": {
           "price": 7.51,
           "brandLabel": "Signature Range",
           "inStock": true,
           "unitPrice": 0.62,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         }
       }
     },
@@ -814,168 +814,168 @@
           "brandLabel": "Champion",
           "inStock": true,
           "unitPrice": 1.52,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-sylvia-park": {
           "price": 2.27,
           "brandLabel": "Champion",
           "inStock": true,
           "unitPrice": 1.52,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-albany": {
-          "price": 2.3,
+          "price": 2.25,
           "brandLabel": "Champion",
           "inStock": true,
-          "unitPrice": 1.54,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "unitPrice": 1.51,
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-lincoln-rd": {
           "price": 2.28,
           "brandLabel": "Champion",
           "inStock": true,
           "unitPrice": 1.52,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-manukau": {
-          "price": 2.29,
+          "price": 2.33,
           "brandLabel": "Champion",
           "inStock": true,
-          "unitPrice": 1.53,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "unitPrice": 1.56,
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-ormiston": {
-          "price": 2.26,
+          "price": 2.27,
           "brandLabel": "Champion",
           "inStock": true,
-          "unitPrice": 1.51,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "unitPrice": 1.52,
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-mt-albert": {
-          "price": 2.3,
+          "price": 2.35,
           "brandLabel": "Champion",
           "inStock": true,
-          "unitPrice": 1.54,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "unitPrice": 1.57,
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-ponsonby": {
           "price": 2.85,
           "brandLabel": "Champion",
           "inStock": true,
           "unitPrice": 1.9,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-takapuna": {
-          "price": 2.79,
+          "price": 2.78,
           "brandLabel": "Champion",
           "inStock": true,
-          "unitPrice": 1.86,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "unitPrice": 1.85,
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-westgate": {
           "price": 2.79,
           "brandLabel": "Champion",
           "inStock": true,
           "unitPrice": 1.86,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-manukau": {
           "price": 2.76,
           "brandLabel": "Champion",
           "inStock": true,
           "unitPrice": 1.84,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-quay-st": {
           "price": 2.95,
           "brandLabel": "Champion",
           "inStock": true,
           "unitPrice": 1.96,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-newmarket": {
           "price": 2.88,
           "brandLabel": "Champion",
           "inStock": true,
           "unitPrice": 1.93,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-victoria-park": {
           "price": 3.05,
           "brandLabel": "Champion",
           "inStock": true,
           "unitPrice": 2.03,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-browns-bay": {
           "price": 3,
           "brandLabel": "Champion",
           "inStock": true,
           "unitPrice": 2,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-new-lynn": {
           "price": 2.99,
           "brandLabel": "Champion",
           "inStock": true,
           "unitPrice": 1.99,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-papatoetoe": {
-          "price": 2.92,
+          "price": 2.93,
           "brandLabel": "Champion",
           "inStock": true,
-          "unitPrice": 1.94,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "unitPrice": 1.95,
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-remuera": {
           "price": 3.09,
           "brandLabel": "Champion",
           "inStock": true,
           "unitPrice": 2.06,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-albany": {
           "price": 3.04,
           "brandLabel": "Champion",
           "inStock": true,
           "unitPrice": 2.03,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-atrium-cbd": {
           "price": 2.59,
           "brandLabel": "Signature Range",
           "inStock": true,
           "unitPrice": 1.73,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-glenfield": {
           "price": 2.53,
           "brandLabel": "Signature Range",
           "inStock": true,
           "unitPrice": 1.69,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-westcity": {
           "price": 2.53,
           "brandLabel": "Signature Range",
           "inStock": true,
           "unitPrice": 1.68,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-manukau": {
           "price": 2.45,
           "brandLabel": "Signature Range",
           "inStock": true,
           "unitPrice": 1.64,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-sylvia-park": {
           "price": 2.46,
           "brandLabel": "Signature Range",
           "inStock": true,
           "unitPrice": 1.64,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         }
       }
     },
@@ -992,168 +992,168 @@
           "brandLabel": "Pams",
           "inStock": true,
           "unitPrice": 1.79,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-sylvia-park": {
           "price": 3.47,
           "brandLabel": "Pams",
           "inStock": true,
           "unitPrice": 1.74,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-albany": {
           "price": 3.52,
           "brandLabel": "Pams",
           "inStock": true,
           "unitPrice": 1.77,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-lincoln-rd": {
           "price": 3.49,
           "brandLabel": "Pams",
           "inStock": true,
           "unitPrice": 1.75,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-manukau": {
           "price": 3.54,
           "brandLabel": "Pams",
           "inStock": true,
           "unitPrice": 1.78,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-ormiston": {
           "price": 3.44,
           "brandLabel": "Pams",
           "inStock": true,
           "unitPrice": 1.72,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-mt-albert": {
           "price": 3.45,
           "brandLabel": "Pams",
           "inStock": true,
           "unitPrice": 1.73,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-ponsonby": {
           "price": 4.02,
           "brandLabel": "Anchor",
           "inStock": true,
           "unitPrice": 2.02,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-takapuna": {
           "price": 3.91,
           "brandLabel": "Anchor",
           "inStock": true,
           "unitPrice": 1.96,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-westgate": {
           "price": 3.9,
           "brandLabel": "Anchor",
           "inStock": true,
           "unitPrice": 1.96,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-manukau": {
           "price": 3.86,
           "brandLabel": "Anchor",
           "inStock": true,
           "unitPrice": 1.94,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-quay-st": {
           "price": 4.04,
           "brandLabel": "Anchor",
           "inStock": true,
           "unitPrice": 2.02,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-newmarket": {
           "price": 4.01,
           "brandLabel": "Anchor",
           "inStock": true,
           "unitPrice": 2.02,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-victoria-park": {
           "price": 4.05,
           "brandLabel": "Meadow Fresh",
           "inStock": true,
           "unitPrice": 2.03,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-browns-bay": {
           "price": 3.99,
           "brandLabel": "Meadow Fresh",
           "inStock": true,
           "unitPrice": 2,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-new-lynn": {
           "price": 3.96,
           "brandLabel": "Meadow Fresh",
           "inStock": true,
           "unitPrice": 1.98,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-papatoetoe": {
           "price": 3.89,
           "brandLabel": "Meadow Fresh",
           "inStock": true,
           "unitPrice": 1.95,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-remuera": {
-          "price": 4.08,
+          "price": 4.1,
           "brandLabel": "Meadow Fresh",
           "inStock": true,
-          "unitPrice": 2.05,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "unitPrice": 2.06,
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-albany": {
           "price": 3.99,
           "brandLabel": "Meadow Fresh",
           "inStock": true,
           "unitPrice": 2,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-atrium-cbd": {
           "price": 3.69,
           "brandLabel": "Signature Range",
           "inStock": true,
           "unitPrice": 1.85,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-glenfield": {
           "price": 3.6,
           "brandLabel": "Signature Range",
           "inStock": true,
           "unitPrice": 1.81,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-westcity": {
           "price": 3.64,
           "brandLabel": "Signature Range",
           "inStock": true,
           "unitPrice": 1.82,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-manukau": {
           "price": 3.6,
           "brandLabel": "Signature Range",
           "inStock": true,
           "unitPrice": 1.81,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-sylvia-park": {
           "price": 3.59,
           "brandLabel": "Signature Range",
           "inStock": true,
           "unitPrice": 1.8,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         }
       }
     },
@@ -1170,168 +1170,168 @@
           "brandLabel": "Pams",
           "inStock": true,
           "unitPrice": 9.99,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-sylvia-park": {
           "price": 9.93,
           "brandLabel": "Pams",
           "inStock": true,
           "unitPrice": 9.93,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-albany": {
           "price": 9.98,
           "brandLabel": "Pams",
           "inStock": true,
           "unitPrice": 9.98,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-lincoln-rd": {
           "price": 9.97,
           "brandLabel": "Pams",
           "inStock": true,
           "unitPrice": 9.97,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-manukau": {
           "price": 9.98,
           "brandLabel": "Pams",
           "inStock": true,
           "unitPrice": 9.98,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-ormiston": {
-          "price": 9.9,
+          "price": 9.92,
           "brandLabel": "Pams",
           "inStock": true,
-          "unitPrice": 9.9,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "unitPrice": 9.92,
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-mt-albert": {
           "price": 9.96,
           "brandLabel": "Pams",
           "inStock": true,
           "unitPrice": 9.96,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-ponsonby": {
           "price": 12.13,
           "brandLabel": "Mainland",
           "inStock": true,
           "unitPrice": 12.13,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-takapuna": {
           "price": 12.02,
           "brandLabel": "Mainland",
           "inStock": true,
           "unitPrice": 12.02,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-westgate": {
           "price": 11.97,
           "brandLabel": "Mainland",
           "inStock": true,
           "unitPrice": 11.97,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-manukau": {
-          "price": 11.99,
+          "price": 12.04,
           "brandLabel": "Mainland",
           "inStock": true,
-          "unitPrice": 11.99,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "unitPrice": 12.04,
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-quay-st": {
           "price": 12.22,
           "brandLabel": "Mainland",
           "inStock": true,
           "unitPrice": 12.22,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-newmarket": {
           "price": 12.13,
           "brandLabel": "Mainland",
           "inStock": true,
           "unitPrice": 12.13,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-victoria-park": {
           "price": 12.59,
           "brandLabel": "Anchor",
           "inStock": true,
           "unitPrice": 12.59,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-browns-bay": {
-          "price": 12.57,
+          "price": 12.59,
           "brandLabel": "Anchor",
           "inStock": true,
-          "unitPrice": 12.57,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "unitPrice": 12.59,
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-new-lynn": {
-          "price": 12.53,
+          "price": 12.56,
           "brandLabel": "Anchor",
           "inStock": true,
-          "unitPrice": 12.53,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "unitPrice": 12.56,
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-papatoetoe": {
           "price": 12.26,
           "brandLabel": "Anchor",
           "inStock": true,
           "unitPrice": 12.26,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-remuera": {
-          "price": 12.62,
+          "price": 12.61,
           "brandLabel": "Anchor",
           "inStock": true,
-          "unitPrice": 12.62,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "unitPrice": 12.61,
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-albany": {
           "price": 12.49,
           "brandLabel": "Anchor",
           "inStock": true,
           "unitPrice": 12.49,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-atrium-cbd": {
           "price": 11.11,
           "brandLabel": "Signature Range",
           "inStock": true,
           "unitPrice": 11.11,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-glenfield": {
           "price": 11.04,
           "brandLabel": "Signature Range",
           "inStock": true,
           "unitPrice": 11.04,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-westcity": {
           "price": 11.02,
           "brandLabel": "Signature Range",
           "inStock": true,
           "unitPrice": 11.02,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-manukau": {
           "price": 11.04,
           "brandLabel": "Signature Range",
           "inStock": true,
           "unitPrice": 11.04,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-sylvia-park": {
           "price": 11.01,
           "brandLabel": "Signature Range",
           "inStock": true,
           "unitPrice": 11.01,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         }
       }
     },
@@ -1344,172 +1344,172 @@
       "emoji": "🧈",
       "prices": {
         "pns-royal-oak": {
-          "price": 5.48,
+          "price": 5.5,
           "brandLabel": "Pams",
           "inStock": true,
-          "unitPrice": 10.96,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "unitPrice": 11,
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-sylvia-park": {
           "price": 5.46,
           "brandLabel": "Pams",
           "inStock": true,
           "unitPrice": 10.92,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-albany": {
           "price": 5.52,
           "brandLabel": "Pams",
           "inStock": true,
           "unitPrice": 11.04,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-lincoln-rd": {
           "price": 5.55,
           "brandLabel": "Pams",
           "inStock": true,
           "unitPrice": 11.1,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-manukau": {
           "price": 5.54,
           "brandLabel": "Pams",
           "inStock": true,
           "unitPrice": 11.08,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-ormiston": {
           "price": 5.41,
           "brandLabel": "Pams",
           "inStock": true,
           "unitPrice": 10.82,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-mt-albert": {
           "price": 5.51,
           "brandLabel": "Pams",
           "inStock": true,
           "unitPrice": 11.02,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-ponsonby": {
           "price": 6.58,
           "brandLabel": "Anchor",
           "inStock": true,
           "unitPrice": 13.16,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-takapuna": {
           "price": 6.47,
           "brandLabel": "Anchor",
           "inStock": true,
           "unitPrice": 12.94,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-westgate": {
           "price": 6.49,
           "brandLabel": "Anchor",
           "inStock": true,
           "unitPrice": 12.98,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-manukau": {
           "price": 6.48,
           "brandLabel": "Anchor",
           "inStock": true,
           "unitPrice": 12.96,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-quay-st": {
           "price": 6.69,
           "brandLabel": "Anchor",
           "inStock": true,
           "unitPrice": 13.38,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-newmarket": {
-          "price": 6.62,
+          "price": 6.65,
           "brandLabel": "Anchor",
           "inStock": true,
-          "unitPrice": 13.24,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "unitPrice": 13.3,
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-victoria-park": {
           "price": 7.05,
           "brandLabel": "Lewis Road",
           "inStock": true,
           "unitPrice": 14.1,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-browns-bay": {
           "price": 6.99,
           "brandLabel": "Lewis Road",
           "inStock": true,
           "unitPrice": 13.98,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-new-lynn": {
           "price": 6.99,
           "brandLabel": "Lewis Road",
           "inStock": true,
           "unitPrice": 13.98,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-papatoetoe": {
-          "price": 6.86,
+          "price": 6.83,
           "brandLabel": "Lewis Road",
           "inStock": true,
-          "unitPrice": 13.72,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "unitPrice": 13.66,
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-remuera": {
-          "price": 7.09,
+          "price": 7.06,
           "brandLabel": "Lewis Road",
           "inStock": true,
-          "unitPrice": 14.18,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "unitPrice": 14.12,
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-albany": {
           "price": 6.98,
           "brandLabel": "Lewis Road",
           "inStock": true,
           "unitPrice": 13.96,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-atrium-cbd": {
           "price": 6.03,
           "brandLabel": "Signature Range",
           "inStock": true,
           "unitPrice": 12.06,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-glenfield": {
           "price": 5.95,
           "brandLabel": "Signature Range",
           "inStock": true,
           "unitPrice": 11.9,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-westcity": {
           "price": 5.99,
           "brandLabel": "Signature Range",
           "inStock": true,
           "unitPrice": 11.98,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-manukau": {
           "price": 6.02,
           "brandLabel": "Signature Range",
           "inStock": true,
           "unitPrice": 12.04,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-sylvia-park": {
-          "price": 6.02,
+          "price": 6.03,
           "brandLabel": "Signature Range",
           "inStock": true,
-          "unitPrice": 12.04,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "unitPrice": 12.06,
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         }
       }
     },
@@ -1526,168 +1526,168 @@
           "brandLabel": "NZ Pork",
           "inStock": true,
           "unitPrice": 10.99,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-sylvia-park": {
           "price": 11.02,
           "brandLabel": "NZ Pork",
           "inStock": true,
           "unitPrice": 11.02,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-albany": {
           "price": 10.95,
           "brandLabel": "NZ Pork",
           "inStock": true,
           "unitPrice": 10.95,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-lincoln-rd": {
           "price": 11.02,
           "brandLabel": "NZ Pork",
           "inStock": true,
           "unitPrice": 11.02,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-manukau": {
           "price": 11,
           "brandLabel": "NZ Pork",
           "inStock": true,
           "unitPrice": 11,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-ormiston": {
           "price": 10.95,
           "brandLabel": "NZ Pork",
           "inStock": true,
           "unitPrice": 10.95,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-mt-albert": {
           "price": 10.94,
           "brandLabel": "NZ Pork",
           "inStock": true,
           "unitPrice": 10.94,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-ponsonby": {
           "price": 14.14,
           "brandLabel": "NZ Pork",
           "inStock": true,
           "unitPrice": 14.14,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-takapuna": {
           "price": 13.99,
           "brandLabel": "NZ Pork",
           "inStock": true,
           "unitPrice": 13.99,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-westgate": {
           "price": 13.99,
           "brandLabel": "NZ Pork",
           "inStock": true,
           "unitPrice": 13.99,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-manukau": {
           "price": 14,
           "brandLabel": "NZ Pork",
           "inStock": true,
           "unitPrice": 14,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-quay-st": {
           "price": 14.2,
           "brandLabel": "NZ Pork",
           "inStock": true,
           "unitPrice": 14.2,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-newmarket": {
           "price": 14.09,
           "brandLabel": "NZ Pork",
           "inStock": true,
           "unitPrice": 14.09,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-victoria-park": {
           "price": 15.06,
           "brandLabel": "Premium NZ",
           "inStock": true,
           "unitPrice": 15.06,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-browns-bay": {
           "price": 14.91,
           "brandLabel": "Premium NZ",
           "inStock": true,
           "unitPrice": 14.91,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-new-lynn": {
           "price": 14.95,
           "brandLabel": "Premium NZ",
           "inStock": true,
           "unitPrice": 14.95,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-papatoetoe": {
           "price": 14.78,
           "brandLabel": "Premium NZ",
           "inStock": true,
           "unitPrice": 14.78,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-remuera": {
           "price": 15.05,
           "brandLabel": "Premium NZ",
           "inStock": true,
           "unitPrice": 15.05,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-albany": {
           "price": 14.93,
           "brandLabel": "Premium NZ",
           "inStock": true,
           "unitPrice": 14.93,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-atrium-cbd": {
           "price": null,
           "brandLabel": null,
           "inStock": false,
           "unitPrice": null,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-glenfield": {
           "price": null,
           "brandLabel": null,
           "inStock": false,
           "unitPrice": null,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-westcity": {
           "price": null,
           "brandLabel": null,
           "inStock": false,
           "unitPrice": null,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-manukau": {
           "price": null,
           "brandLabel": null,
           "inStock": false,
           "unitPrice": null,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-sylvia-park": {
           "price": null,
           "brandLabel": null,
           "inStock": false,
           "unitPrice": null,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         }
       }
     },
@@ -1704,168 +1704,168 @@
           "brandLabel": "NZ Beef",
           "inStock": true,
           "unitPrice": 13.02,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-sylvia-park": {
           "price": 13.02,
           "brandLabel": "NZ Beef",
           "inStock": true,
           "unitPrice": 13.02,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-albany": {
           "price": 13,
           "brandLabel": "NZ Beef",
           "inStock": true,
           "unitPrice": 13,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-lincoln-rd": {
           "price": 13.03,
           "brandLabel": "NZ Beef",
           "inStock": true,
           "unitPrice": 13.03,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-manukau": {
-          "price": 12.97,
+          "price": 13,
           "brandLabel": "NZ Beef",
           "inStock": true,
-          "unitPrice": 12.97,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "unitPrice": 13,
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-ormiston": {
           "price": 12.94,
           "brandLabel": "NZ Beef",
           "inStock": true,
           "unitPrice": 12.94,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "pns-mt-albert": {
           "price": 12.94,
           "brandLabel": "NZ Beef",
           "inStock": true,
           "unitPrice": 12.94,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-ponsonby": {
           "price": 15.12,
           "brandLabel": "NZ Beef",
           "inStock": true,
           "unitPrice": 15.12,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-takapuna": {
           "price": 15.01,
           "brandLabel": "NZ Beef",
           "inStock": true,
           "unitPrice": 15.01,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-westgate": {
           "price": 14.96,
           "brandLabel": "NZ Beef",
           "inStock": true,
           "unitPrice": 14.96,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-manukau": {
           "price": 14.88,
           "brandLabel": "NZ Beef",
           "inStock": true,
           "unitPrice": 14.88,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-quay-st": {
           "price": 15.34,
           "brandLabel": "NZ Beef",
           "inStock": true,
           "unitPrice": 15.34,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "ww-newmarket": {
           "price": 15.12,
           "brandLabel": "NZ Beef",
           "inStock": true,
           "unitPrice": 15.12,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-victoria-park": {
           "price": 16.1,
           "brandLabel": "Premium NZ",
           "inStock": true,
           "unitPrice": 16.1,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-browns-bay": {
           "price": 15.99,
           "brandLabel": "Premium NZ",
           "inStock": true,
           "unitPrice": 15.99,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-new-lynn": {
           "price": 15.97,
           "brandLabel": "Premium NZ",
           "inStock": true,
           "unitPrice": 15.97,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-papatoetoe": {
           "price": 15.83,
           "brandLabel": "Premium NZ",
           "inStock": true,
           "unitPrice": 15.83,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-remuera": {
-          "price": 16.04,
+          "price": 15.99,
           "brandLabel": "Premium NZ",
           "inStock": true,
-          "unitPrice": 16.04,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "unitPrice": 15.99,
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "nw-albany": {
           "price": 15.99,
           "brandLabel": "Premium NZ",
           "inStock": true,
           "unitPrice": 15.99,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-atrium-cbd": {
           "price": null,
           "brandLabel": null,
           "inStock": false,
           "unitPrice": null,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-glenfield": {
           "price": null,
           "brandLabel": null,
           "inStock": false,
           "unitPrice": null,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-westcity": {
           "price": null,
           "brandLabel": null,
           "inStock": false,
           "unitPrice": null,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-manukau": {
           "price": null,
           "brandLabel": null,
           "inStock": false,
           "unitPrice": null,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         },
         "tw-sylvia-park": {
           "price": null,
           "brandLabel": null,
           "inStock": false,
           "unitPrice": null,
-          "lastUpdatedIso": "2026-09-28T21:33:24.317Z"
+          "lastUpdatedIso": "2026-09-29T20:25:20.889Z"
         }
       }
     }
