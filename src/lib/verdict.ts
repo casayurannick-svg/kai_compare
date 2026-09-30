@@ -1,4 +1,5 @@
 import type { GroceryItem, Basket, ResolvedBranch } from "./types";
+import { resolveCanonicalId } from "./basket";
 
 export interface StoreVerdictRank {
   branchId: string;
@@ -89,7 +90,8 @@ export function calculateWinnerVerdict(
     const missingItems: string[] = [];
 
     for (const [itemId, qty] of activeEntries) {
-      const item = itemMap.get(itemId);
+      const canonicalKey = resolveCanonicalId(itemId);
+      const item = itemMap.get(canonicalKey) || itemMap.get(itemId);
       if (!item) continue;
       const priceEntry = item.prices?.[branch.branchId];
       if (!priceEntry || !priceEntry.inStock || priceEntry.price === null) {

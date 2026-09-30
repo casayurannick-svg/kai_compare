@@ -3,6 +3,13 @@
 import { useState, useMemo, useCallback } from "react";
 import { GroceryItem, Basket, Chain } from "@/lib/types";
 import { computeStoreTotals, computeSmartSplit, resolveBranches, resolveDefaultBranches } from "@/lib/data";
+import {
+  DEFAULT_BASKET,
+  DEFAULT_STAPLES_BASELINE,
+  createDefaultBasket,
+  createBasket,
+  resolveCanonicalId,
+} from "@/lib/basket";
 import { AUCKLAND_SUBURBS, getNearestBranchesWithinRadius, getNearestSuburbName } from "@/lib/auckland_locations";
 import Header from "@/components/Header";
 import ComparisonGrid from "@/components/ComparisonGrid";
@@ -18,8 +25,13 @@ interface AppClientProps {
   lastUpdated: string;
 }
 
+// Pre-populated default 9-staple baseline basket (KC-STORY-01)
+// rice-1kg: 1, bread-loaf: 1, eggs-dozen: 1, flour-1.5kg: 1, milk-2l: 1,
+// cheese-1kg: 1, butter-500g: 1, pork-chops-1kg: 1, beef-mince-1kg: 1
+export { DEFAULT_BASKET, DEFAULT_STAPLES_BASELINE };
+
 export default function AppClient({ items, chains, lastUpdated }: AppClientProps) {
-  const [basket, setBasket] = useState<Basket>({});
+  const [basket, setBasket] = useState<Basket>(() => createDefaultBasket());
   const [modalOpen, setModalOpen] = useState(false);
   const [coords, setCoords] = useState<{ lat: number; lng: number } | null>(null);
   const [suburbName, setSuburbName] = useState<string>("");
@@ -33,14 +45,15 @@ export default function AppClient({ items, chains, lastUpdated }: AppClientProps
 
   const handleQuantityChange = useCallback((itemId: string, delta: number) => {
     setBasket((prev) => {
-      const current = prev[itemId] ?? 0;
+      const canonicalKey = resolveCanonicalId(itemId);
+      const current = prev[canonicalKey] ?? prev[itemId] ?? 0;
       const next = Math.max(0, current + delta);
       if (next === current) return prev;
-      return { ...prev, [itemId]: next };
+      return createBasket({ ...prev, [canonicalKey]: next });
     });
   }, []);
 
-  const clearBasket = useCallback(() => setBasket({}), []);
+  const clearBasket = useCallback(() => setBasket(createBasket({})), []);
 
   const totals = useMemo(
     () => computeStoreTotals(items, basket, activeBranches),

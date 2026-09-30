@@ -5,10 +5,34 @@ Compare staple grocery prices across Auckland's major supermarkets (PAK'nSAVE, W
 ## Features
 
 - **Suburb & Geolocation Selector**: Automatically finds the nearest branches within a 5 km radius (with fallback expansion) for 20+ Auckland suburbs.
-- **Staples Comparison Grid**: Compare prices across 9 essential supermarket staples.
+- **Pre-Populated Baseline Basket (KC-STORY-01)**: Pre-seeds quantity 1 for all 9 core staples on initial load so the Winner Verdict renders immediately.
+- **Staples Comparison Grid**: Compare prices across 9 essential supermarket staples with interactive steppers.
 - **Winner Verdict Hero Card (KC-STORY-03)**: Real-time hero card highlighting the overall cheapest supermarket and dynamic competitor price deltas.
 - **Smart Split Optimizer**: Multi-store routing that calculates maximum savings when splitting your haul across stores.
 - **Shopping List Modal**: Categorized breakdown with copy-to-clipboard functionality.
+
+---
+
+## Pre-Populated Default Staples Basket (KC-STORY-01)
+
+To provide an instant high-value comparison on initial page load, KaiCompare pre-seeds the basket state with a baseline quantity of **1** for all 9 core staples (`DEFAULT_STAPLES_BASELINE`):
+
+| Core Staple | Initial Quantity | Dataset Item ID |
+| :--- | :---: | :--- |
+| `rice-1kg` | **1** | `white-rice-1kg` |
+| `bread-loaf` | **1** | `sandwich-bread-700g` |
+| `eggs-dozen` | **1** | `eggs-dozen` |
+| `flour-1.5kg` | **1** | `plain-flour-1-5kg` |
+| `milk-2l` | **1** | `standard-milk-2l` |
+| `cheese-1kg` | **1** | `edam-cheese-1kg` |
+| `butter-500g` | **1** | `butter-500g` |
+| `pork-chops-1kg` | **1** | `pork-chops-1kg` |
+| `beef-mince-1kg` | **1** | `beef-mince-1kg` |
+
+### User Experience & Interactivity
+- **Instant Verdict**: The Winner Verdict hero card, store totals, and competitor savings render immediately on first visit without requiring shoppers to manually tap `+` on each item.
+- **Full Stepper Interactivity**: Shoppers can adjust quantities (`+`, `-`), zero out individual items, or click the clear/trash action to reset the basket.
+- **Seamless Recalculation**: All delta badges, winning totals, and marginal advice adapt dynamically as quantities change.
 
 ---
 

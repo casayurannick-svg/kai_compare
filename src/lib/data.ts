@@ -10,6 +10,7 @@ import type {
   BranchId,
 } from "./types";
 import { getDefaultBranches, type BranchWithDistance } from "./auckland_locations";
+import { resolveCanonicalId } from "./basket";
 
 // ─── Data Fetcher ─────────────────────────────────────────────────────────────
 
@@ -98,7 +99,8 @@ export function computeStoreTotals(
 
     for (const [itemId, qty] of Object.entries(basket)) {
       if (qty === 0) continue;
-      const item = itemMap.get(itemId);
+      const canonicalKey = resolveCanonicalId(itemId);
+      const item = itemMap.get(canonicalKey) || itemMap.get(itemId);
       if (!item) continue;
       const entry = item.prices[branch.branchId];
       if (!entry || !entry.inStock || entry.price === null) {
@@ -159,7 +161,8 @@ export function computeSmartSplit(
 
   for (const [itemId, qty] of Object.entries(basket)) {
     if (qty === 0) continue;
-    const item = itemMap.get(itemId);
+    const canonicalKey = resolveCanonicalId(itemId);
+    const item = itemMap.get(canonicalKey) || itemMap.get(itemId);
     if (!item) continue;
     const cheapestBranchId = getCheapestBranchForItem(item, resolvedBranches);
     if (!cheapestBranchId) continue;
