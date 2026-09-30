@@ -102,57 +102,137 @@ export function getDistanceKm(lat1: number, lon1: number, lat2: number, lon2: nu
   return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 }
 
-// ─── Radius Filter Utilities ──────────────────────────────────────────────────
+// ─── Radius Filter Utilities (KC-STORY-02) ────────────────────────────────────
 
-const CHAIN_IDS = ["paknsave", "woolworths", "newworld", "warehouse"];
+export const PRIMARY_CHAINS = ["paknsave", "woolworths", "newworld"] as const;
+export const FALLBACK_CHAIN = "warehouse" as const;
+export const ALL_CHAINS = [...PRIMARY_CHAINS, FALLBACK_CHAIN] as const;
+
+export const CHAIN_NAMES: Record<string, string> = {
+  paknsave: "PAK'nSAVE",
+  woolworths: "Woolworths",
+  newworld: "New World",
+  warehouse: "The Warehouse",
+};
+
+export interface NearestBranchesResult {
+  branches: BranchWithDistance[];
+  expanded: boolean;
+  radiusExpanded: boolean;
+  expandedChainNames: string[];
+  expandedChainName?: string;
+}
 
 /**
- * Given a reference point, find the nearest branch per chain within `radiusKm`.
- * Falls back to 2× radius then to absolute nearest if fewer than 2 chains qualify.
+ * Top 3 Distinct Supermarket Chain Detection (KC-STORY-02)
+ *
+ * Given user location (selected suburb or GPS):
+ * 1. Calculate distances to all registered branches.
+ * 2. Identify target chains: paknsave, woolworths, newworld (fallback: warehouse).
+ * 3. For each distinct chain, select its single closest branch within <= 5.0 km.
+ * 4. If fewer than 3 distinct chains are found within 5km, expand search up to <= 10.0 km
+ *    to locate closest missing chain(s).
+ * 5. Cap to top 3 distinct chain branches, sorted by distance.
+ * 6. Flag radiusExpanded: true if any included store was found at > 5.0 km.
  */
-export function getNearestBranchesWithinRadius(
+export function selectTop3DistinctChains(
   lat: number,
   lng: number,
-  radiusKm = 5
-): { branches: BranchWithDistance[]; expanded: boolean } {
+  baseRadiusKm = 5.0,
+  maxRadiusKm = 10.0
+): NearestBranchesResult {
   const withDist: BranchWithDistance[] = STORE_LOCATIONS.map((loc) => ({
     ...loc,
     distanceKm: Math.round(getDistanceKm(lat, lng, loc.lat, loc.lng) * 10) / 10,
-  }));
+  })).sort((a, b) => (a.distanceKm ?? 999) - (b.distanceKm ?? 999));
 
-  const nearestPerChain = (maxR: number): BranchWithDistance[] =>
-    CHAIN_IDS.flatMap((chainId) => {
-      const sorted = withDist
-        .filter((b) => b.chainId === chainId && (b.distanceKm ?? 999) <= maxR)
-        .sort((a, b) => (a.distanceKm ?? 999) - (b.distanceKm ?? 999));
-      return sorted.length > 0 ? [sorted[0]] : [];
-    });
+  const selectedChains = new Map<string, BranchWithDistance>();
 
-  const primary = nearestPerChain(radiusKm);
-  if (primary.length >= 2) return { branches: primary, expanded: false };
+  // 3. For each distinct chain, select its single closest branch within <= 5.0 km
+  for (const chainId of PRIMARY_CHAINS) {
+    const closest = withDist.find(
+      (b) => b.chainId === chainId && (b.distanceKm ?? 999) <= baseRadiusKm
+    );
+    if (closest) {
+      selectedChains.set(chainId, closest);
+    }
+  }
 
-  const expanded = nearestPerChain(radiusKm * 2);
-  if (expanded.length >= 2) return { branches: expanded, expanded: true };
+  // 4. If fewer than 3 distinct chains are found within 5km, expand search up to <= 10.0 km
+  // to locate closest missing chain(s)
+  if (selectedChains.size < 3) {
+    // Missing primary chains
+    for (const chainId of PRIMARY_CHAINS) {
+      if (!selectedChains.has(chainId)) {
+        const closest = withDist.find(
+          (b) => b.chainId === chainId && (b.distanceKm ?? 999) <= maxRadiusKm
+        );
+        if (closest) {
+          selectedChains.set(chainId, closest);
+          if (selectedChains.size >= 3) break;
+        }
+      }
+    }
+  }
 
-  // Last resort: absolute nearest regardless of distance
-  const absolute = CHAIN_IDS.flatMap((chainId) => {
-    const sorted = withDist
-      .filter((b) => b.chainId === chainId)
-      .sort((a, b) => (a.distanceKm ?? 999) - (b.distanceKm ?? 999));
-    return sorted.length > 0 ? [sorted[0]] : [];
-  });
-  return { branches: absolute, expanded: true };
+  // If still fewer than 3, fallback to warehouse
+  if (selectedChains.size < 3 && !selectedChains.has(FALLBACK_CHAIN)) {
+    const closestFallback = withDist.find(
+      (b) => b.chainId === FALLBACK_CHAIN && (b.distanceKm ?? 999) <= maxRadiusKm
+    );
+    if (closestFallback) {
+      selectedChains.set(FALLBACK_CHAIN, closestFallback);
+    }
+  }
+
+  // Safeguard for extreme coordinates: absolute closest branch of remaining chains
+  if (selectedChains.size < 3) {
+    for (const loc of withDist) {
+      if (!selectedChains.has(loc.chainId)) {
+        selectedChains.set(loc.chainId, loc);
+        if (selectedChains.size >= 3) break;
+      }
+    }
+  }
+
+  // 5. Cap to top 3 distinct chain branches, sorted by distance
+  const branches = Array.from(selectedChains.values())
+    .sort((a, b) => (a.distanceKm ?? 999) - (b.distanceKm ?? 999))
+    .slice(0, 3);
+
+  // 6. Flag radiusExpanded: true if any included store was found at > 5.0 km
+  const expandedBranches = branches.filter((b) => (b.distanceKm ?? 0) > baseRadiusKm);
+  const radiusExpanded = expandedBranches.length > 0;
+  const expandedChainNames = expandedBranches.map(
+    (b) => CHAIN_NAMES[b.chainId] || b.name
+  );
+  const expandedChainName =
+    expandedChainNames.length > 0
+      ? expandedChainNames.length === 2
+        ? `${expandedChainNames[0]} & ${expandedChainNames[1]}`
+        : expandedChainNames.join(", ")
+      : undefined;
+
+  return {
+    branches,
+    expanded: radiusExpanded,
+    radiusExpanded,
+    expandedChainNames,
+    expandedChainName,
+  };
 }
 
-/** Default branches shown when no suburb is selected (one representative per chain). */
+export const getNearestBranchesWithinRadius = selectTop3DistinctChains;
+export const getTop3DistinctChains = selectTop3DistinctChains;
+
+/** Default branches shown when no suburb is selected (top 3 distinct chains). */
 export function getDefaultBranches(): BranchWithDistance[] {
   const defaults: Record<string, string> = {
     paknsave:   "pns-royal-oak",
     woolworths: "ww-ponsonby",
     newworld:   "nw-victoria-park",
-    warehouse:  "tw-atrium-cbd",
   };
-  return CHAIN_IDS.map((chainId) => ({
+  return PRIMARY_CHAINS.map((chainId) => ({
     ...STORE_LOCATIONS.find((l) => l.id === defaults[chainId])!,
     distanceKm: null,
   }));

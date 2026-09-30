@@ -122,8 +122,8 @@ export default function ComparisonGrid({
                       </div>
                     </div>
 
-                    {/* Minimalist Branch Comparison Cards */}
-                    <div className="grid grid-cols-2 gap-2.5">
+                    {/* Minimalist Branch Comparison Cards (Top 3 Distinct Chains) */}
+                    <div className={branches.length === 3 ? "grid grid-cols-3 gap-2" : "grid grid-cols-2 gap-2.5"}>
                       {branches.map((branch) => {
                         const priceEntry = item.prices[branch.branchId];
                         const isCheapest = branch.branchId === cheapestBranchId;

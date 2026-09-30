@@ -5,6 +5,7 @@ Compare staple grocery prices across Auckland's major supermarkets (PAK'nSAVE, W
 ## Features
 
 - **Minimalist Modern Grocery Design (KC-UI-01)**: Soft pastel tints, pill badges, clean whitespace, and refined typography.
+- **Top 3 Distinct Supermarket Chain Detection (KC-STORY-02)**: Enforces brand diversity across PAK'nSAVE, Woolworths, and New World (fallback to The Warehouse) with smart 5 km-to-10 km radius fallback expansion.
 - **Suburb & Geolocation Selector**: Automatically finds the nearest branches within a 5 km radius (with fallback expansion) for 20+ Auckland suburbs.
 - **Pre-Populated Baseline Basket (KC-STORY-01)**: Pre-seeds quantity 1 for all 9 core staples on initial load so the Winner Verdict renders immediately.
 - **Staples Comparison Grid**: Compare prices across 9 essential supermarket staples with interactive pill steppers and lowest-price tags.
@@ -14,6 +15,25 @@ Compare staple grocery prices across Auckland's major supermarkets (PAK'nSAVE, W
 - **Community Feedback & Bug Reporting (KC-ENG-02)**: In-app feedback modal with suburb detection, discrepancy categorization, and mailto fallback.
 - **Direct Supporter Profile (KC-GROWTH-01 / KC-GROWTH-02)**: Revolut Pay supporter entry point with configurable `NEXT_PUBLIC_DONATION_URL`.
 - **Terms & Price Disclaimer (KC-LEGAL-01)**: Modal detailing independent consumer service terms, trademark non-affiliation, and pricing benchmark disclaimers.
+
+---
+
+## Top 3 Distinct Supermarket Chain Detection & Radius Fallback (KC-STORY-02)
+
+To ensure shoppers compare truly diverse market options rather than multiple branches of the same chain (e.g. two Woolworths branches), KaiCompare Auckland enforces a **brand diversity rule** paired with a smart **5 km to 10 km radius expansion**:
+
+### Selection Logic (`lib/auckland_locations.ts`, `lib/verdict.ts`)
+1. **Target Competitor Chains**: Primary target competitor chains are **PAK'nSAVE**, **Woolworths NZ**, and **New World**, with **The Warehouse** serving as an automatic fallback competitor.
+2. **Standard 5 km Radius Search**: For each distinct chain, the algorithm identifies its single closest branch within $\le 5.0\text{ km}$ of the user's selected suburb or GPS coordinates.
+3. **10 km Expansion Fallback**: If fewer than 3 distinct chains are found within 5 km:
+   - The search expands up to $\le 10.0\text{ km}$ to locate the closest missing primary chain(s) (e.g. locating PAK'nSAVE Mt Albert at 5.8 km for Auckland CBD shoppers).
+   - If fewer than 3 distinct chains still exist within 10 km (e.g. in Westgate where New World is $>10\text{ km}$ away), the system falls back to the nearest **The Warehouse** branch within 10 km.
+4. **Top 3 Capping & Distance Ordering**: Candidate branches are capped to the top 3 distinct chains, sorted ascending by travel distance.
+5. **Transparency Expansion Flag**: If any branch in the top 3 was discovered beyond the standard 5 km radius (`distanceKm > 5.0`), the system sets `radiusExpanded: true` and identifies the specific expanded chain name(s).
+
+### UI Transparency Pill Badge
+Whenever radius expansion is triggered, the interface renders a subtle pill badge in the hero area and Winner Verdict card:
+> `Expanded search to find nearest [Chain Name]` (e.g., *Expanded search to find nearest PAK'nSAVE* in Auckland CBD, or *Expanded search to find nearest The Warehouse & PAK'nSAVE* in Westgate).
 
 ---
 

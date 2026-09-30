@@ -41,11 +41,21 @@ export default function AppClient({ items, chains, lastUpdated }: AppClientProps
   const [coords, setCoords] = useState<{ lat: number; lng: number } | null>(null);
   const [suburbName, setSuburbName] = useState<string>("");
 
-  // Branch resolution based on coords
-  const { branches: activeBranches, expanded } = useMemo(() => {
-    if (!coords) return { branches: resolveDefaultBranches(chains), expanded: false };
+  // Branch resolution based on coords (KC-STORY-02)
+  const { branches: activeBranches, expanded, expandedChainName } = useMemo(() => {
+    if (!coords) {
+      return {
+        branches: resolveDefaultBranches(chains),
+        expanded: false,
+        expandedChainName: undefined,
+      };
+    }
     const result = getNearestBranchesWithinRadius(coords.lat, coords.lng, 5.0);
-    return { branches: resolveBranches(result.branches, chains), expanded: result.expanded };
+    return {
+      branches: resolveBranches(result.branches, chains),
+      expanded: result.expanded,
+      expandedChainName: result.expandedChainName,
+    };
   }, [coords, chains]);
 
   const handleQuantityChange = useCallback((itemId: string, delta: number) => {
@@ -130,8 +140,13 @@ export default function AppClient({ items, chains, lastUpdated }: AppClientProps
         </div>
 
         {expanded && coords && (
-          <div className="mb-8 rounded-2xl bg-sky-50/70 border border-sky-200/60 p-3.5 text-xs sm:text-sm text-sky-800 font-medium">
-            <strong>Note:</strong> Expanded radius to find your nearest branches.
+          <div className="mb-6 rounded-2xl bg-sky-50/80 border border-sky-200/70 px-4 py-2.5 flex items-center gap-2.5 text-xs sm:text-sm text-sky-900 font-medium shadow-2xs">
+            <span className="w-2 h-2 rounded-full bg-sky-500 shrink-0" />
+            <span>
+              {expandedChainName
+                ? `Expanded search to find nearest ${expandedChainName}`
+                : "Expanded search to find nearest branches"}
+            </span>
           </div>
         )}
 
@@ -139,6 +154,8 @@ export default function AppClient({ items, chains, lastUpdated }: AppClientProps
           items={items}
           basket={basket}
           branches={activeBranches}
+          radiusExpanded={expanded}
+          expandedChainName={expandedChainName}
         />
 
         <ComparisonGrid

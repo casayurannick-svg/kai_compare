@@ -26,6 +26,9 @@ export interface WinnerVerdict {
   deltaVsSecond: number | null;
   deltaVsThird: number | null;
   isMarginal: boolean;
+  radiusExpanded?: boolean;
+  expandedChainNames?: string[];
+  expandedChainName?: string;
 }
 
 export interface VerdictInputOptions {
@@ -150,6 +153,19 @@ export function calculateWinnerVerdict(
   // Set isMarginal = deltaVsSecond < 0.75
   const isMarginal = deltaVsSecond !== null ? deltaVsSecond < 0.75 : false;
 
+  // KC-STORY-02: Check if any included store was found at > 5.0 km
+  const expandedBranches = branches.filter((b) => (b.distanceKm ?? 0) > 5.0);
+  const radiusExpanded = expandedBranches.length > 0;
+  const expandedChainNames = Array.from(
+    new Set(expandedBranches.map((b) => b.chainShortName || b.branchDisplayName || b.fullName))
+  );
+  const expandedChainName =
+    expandedChainNames.length > 0
+      ? expandedChainNames.length === 2
+        ? `${expandedChainNames[0]} & ${expandedChainNames[1]}`
+        : expandedChainNames.join(", ")
+      : undefined;
+
   return {
     winner,
     runnerUp,
@@ -161,7 +177,21 @@ export function calculateWinnerVerdict(
     deltaVsSecond,
     deltaVsThird,
     isMarginal,
+    radiusExpanded,
+    expandedChainNames,
+    expandedChainName,
   };
 }
 
 export const computeWinnerVerdict = calculateWinnerVerdict;
+
+// Re-export KC-STORY-02 distinct chain selection functions
+export {
+  selectTop3DistinctChains,
+  getTop3DistinctChains,
+  getNearestBranchesWithinRadius,
+  PRIMARY_CHAINS,
+  FALLBACK_CHAIN,
+  CHAIN_NAMES,
+} from "./auckland_locations";
+export type { NearestBranchesResult } from "./auckland_locations";
