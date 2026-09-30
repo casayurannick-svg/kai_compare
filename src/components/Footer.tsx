@@ -1,4 +1,4 @@
-import { MessageSquare, FileText, Coffee, Heart } from "lucide-react";
+import { MessageSquare, FileText, Heart } from "lucide-react";
 
 interface FooterProps {
   onOpenFeedback: () => void;
@@ -6,20 +6,23 @@ interface FooterProps {
 }
 
 export default function Footer({ onOpenFeedback, onOpenTerms }: FooterProps) {
+  const donationUrl =
+    process.env.NEXT_PUBLIC_DONATION_URL || "https://revolut.me/ncasayuran";
+
   return (
     <footer className="mt-20 border-t border-stone-200/70 bg-stone-100/60 py-10 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto flex flex-col items-center text-center space-y-6">
         {/* Utility buttons & donation link */}
         <div className="flex flex-wrap items-center justify-center gap-3">
-          {/* Buy Me a Coffee pill */}
+          {/* Buy Me a Coffee / Revolut pill (KC-GROWTH-02) */}
           <a
-            href="https://buymeacoffee.com"
+            href={donationUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs sm:text-sm font-bold bg-amber-100/90 hover:bg-amber-200 text-amber-900 border border-amber-200/80 shadow-2xs transition-all active:scale-95"
             aria-label="Buy Me a Coffee"
           >
-            <Coffee className="w-4 h-4 text-amber-600" />
+            <span className="text-base leading-none" aria-hidden="true">☕</span>
             <span>Buy Me a Coffee</span>
           </a>
 
