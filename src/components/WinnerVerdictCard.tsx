@@ -1,9 +1,11 @@
 "use client";
 
-import { useMemo } from "react";
+import { useState, useMemo } from "react";
 import { GroceryItem, Basket, ResolvedBranch } from "@/lib/types";
 import { calculateWinnerVerdict, WinnerVerdict } from "@/lib/verdict";
-import { Trophy, TrendingDown, MapPin, Sparkles, CheckCircle2 } from "lucide-react";
+import { CalculationMode, calculateDrivingCost, IRD_MILEAGE_RATE_PER_KM, DEFAULT_FUEL_RATE_PER_KM } from "@/lib/driving";
+import DrivingCostToggle from "./DrivingCostToggle";
+import { Trophy, TrendingDown, MapPin, Sparkles, CheckCircle2, Car } from "lucide-react";
 
 export interface WinnerVerdictCardProps {
   items: GroceryItem[];
@@ -12,6 +14,8 @@ export interface WinnerVerdictCardProps {
   verdict?: WinnerVerdict | null;
   radiusExpanded?: boolean;
   expandedChainName?: string;
+  calculationMode?: CalculationMode;
+  onCalculationModeChange?: (mode: CalculationMode) => void;
 }
 
 export default function WinnerVerdictCard({
@@ -21,7 +25,19 @@ export default function WinnerVerdictCard({
   verdict: propVerdict,
   radiusExpanded: propRadiusExpanded,
   expandedChainName: propExpandedChainName,
+  calculationMode: propCalculationMode,
+  onCalculationModeChange,
 }: WinnerVerdictCardProps) {
+  const [internalMode, setInternalMode] = useState<CalculationMode>("FUEL");
+  const mode = propCalculationMode ?? internalMode;
+
+  const handleModeChange = (newMode: CalculationMode) => {
+    if (onCalculationModeChange) {
+      onCalculationModeChange(newMode);
+    } else {
+      setInternalMode(newMode);
+    }
+  };
   const computedVerdict = useMemo(() => {
     if (propVerdict !== undefined) return propVerdict;
     return calculateWinnerVerdict(items, basket, branches);
@@ -159,6 +175,37 @@ export default function WinnerVerdictCard({
             </div>
           </div>
         </div>
+
+        {/* Driving Cost Comparison Bar (FEAT-60) */}
+        {winner.distanceKm !== null && (
+          <div className="mt-4 pt-4 border-t border-emerald-200/50 flex flex-col lg:flex-row lg:items-center justify-between gap-3">
+            <div className="flex flex-wrap items-center gap-2.5">
+              <span className="text-xs font-bold uppercase tracking-wider text-emerald-900/80 flex items-center gap-1.5">
+                <Car className="w-3.5 h-3.5 text-emerald-700" />
+                Driving Mileage:
+              </span>
+              <DrivingCostToggle mode={mode} onChange={handleModeChange} />
+            </div>
+
+            <div className="flex flex-wrap items-center gap-2.5 text-xs">
+              <span className="text-stone-600">
+                Est. Driving:{" "}
+                <strong className="text-stone-900">
+                  +${calculateDrivingCost(winner.distanceKm, mode).toFixed(2)}
+                </strong>{" "}
+                <span className="text-stone-400">
+                  ({winner.distanceKm.toFixed(1)} km @ $
+                  {(mode === "IRD_TRUE_COST" ? IRD_MILEAGE_RATE_PER_KM : DEFAULT_FUEL_RATE_PER_KM).toFixed(2)}
+                  /km)
+                </span>
+              </span>
+              <span className="bg-emerald-100/90 text-emerald-950 font-bold px-2.5 py-1 rounded-full border border-emerald-200/80 shadow-2xs">
+                Trip Total: $
+                {(verdict.winnerTotal + calculateDrivingCost(winner.distanceKm, mode)).toFixed(2)}
+              </span>
+            </div>
+          </div>
+        )}
 
         {/* Competitor Price Delta Badges */}
         {(deltaVsSecondText || deltaVsThirdText) && (

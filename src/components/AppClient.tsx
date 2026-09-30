@@ -11,6 +11,7 @@ import {
   resolveCanonicalId,
 } from "@/lib/basket";
 import { AUCKLAND_SUBURBS, getNearestBranchesWithinRadius, getNearestSuburbName } from "@/lib/auckland_locations";
+import { CalculationMode } from "@/lib/driving";
 import Header from "@/components/Header";
 import ComparisonGrid from "@/components/ComparisonGrid";
 import BasketPanel from "@/components/BasketPanel";
@@ -40,6 +41,7 @@ export default function AppClient({ items, chains, lastUpdated }: AppClientProps
   const [termsModalOpen, setTermsModalOpen] = useState(false);
   const [coords, setCoords] = useState<{ lat: number; lng: number } | null>(null);
   const [suburbName, setSuburbName] = useState<string>("");
+  const [calculationMode, setCalculationMode] = useState<CalculationMode>("FUEL");
 
   // Branch resolution based on coords (KC-STORY-02)
   const { branches: activeBranches, expanded, expandedChainName } = useMemo(() => {
@@ -156,6 +158,8 @@ export default function AppClient({ items, chains, lastUpdated }: AppClientProps
           branches={activeBranches}
           radiusExpanded={expanded}
           expandedChainName={expandedChainName}
+          calculationMode={calculationMode}
+          onCalculationModeChange={setCalculationMode}
         />
 
         <ComparisonGrid
@@ -165,7 +169,13 @@ export default function AppClient({ items, chains, lastUpdated }: AppClientProps
           onQuantityChange={handleQuantityChange}
         />
 
-        <BasketPanel branches={activeBranches} totals={totals} basketItemCount={basketItemCount} />
+        <BasketPanel
+          branches={activeBranches}
+          totals={totals}
+          basketItemCount={basketItemCount}
+          calculationMode={calculationMode}
+          onCalculationModeChange={setCalculationMode}
+        />
 
         {hasBasketItems && (
           <SmartSplitCard result={smartSplit} branches={activeBranches} />

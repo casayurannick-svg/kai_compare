@@ -1,14 +1,40 @@
+"use client";
+
+import { useState } from "react";
 import { StoreTotals, ResolvedBranch } from "@/lib/types";
-import { AlertCircle, CheckCircle2, Trophy } from "lucide-react";
+import { CalculationMode, calculateDrivingCost } from "@/lib/driving";
+import DrivingCostToggle from "./DrivingCostToggle";
+import { AlertCircle, CheckCircle2, Trophy, Car } from "lucide-react";
 
 interface BasketPanelProps {
   branches: ResolvedBranch[];
   totals: StoreTotals[];
   basketItemCount: number;
+  calculationMode?: CalculationMode;
+  onCalculationModeChange?: (mode: CalculationMode) => void;
 }
 
-export default function BasketPanel({ branches, totals, basketItemCount }: BasketPanelProps) {
+export default function BasketPanel({
+  branches,
+  totals,
+  basketItemCount,
+  calculationMode: propCalculationMode,
+  onCalculationModeChange,
+}: BasketPanelProps) {
+  const [internalMode, setInternalMode] = useState<CalculationMode>("FUEL");
+  const mode = propCalculationMode ?? internalMode;
+
+  const handleModeChange = (newMode: CalculationMode) => {
+    if (onCalculationModeChange) {
+      onCalculationModeChange(newMode);
+    } else {
+      setInternalMode(newMode);
+    }
+  };
+
   if (basketItemCount === 0) return null;
+
+  const hasDistances = branches.some((b) => b.distanceKm !== null && b.distanceKm > 0);
 
   // Find the lowest total (that is > 0)
   const validTotals = totals.filter((t) => t.total > 0 && t.itemCount === basketItemCount);
@@ -17,13 +43,24 @@ export default function BasketPanel({ branches, totals, basketItemCount }: Baske
 
   return (
     <section className="mt-14">
-      <div className="flex items-center gap-2 mb-4 px-1">
-        <h2 className="text-xl sm:text-2xl font-black text-stone-900 tracking-tight">
-          One-Stop Shop Totals
-        </h2>
-        <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-stone-100 text-stone-600 border border-stone-200/60">
-          Entire Basket
-        </span>
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 px-1">
+        <div className="flex items-center gap-2">
+          <h2 className="text-xl sm:text-2xl font-black text-stone-900 tracking-tight">
+            One-Stop Shop Totals
+          </h2>
+          <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-stone-100 text-stone-600 border border-stone-200/60">
+            Entire Basket
+          </span>
+        </div>
+
+        {hasDistances && (
+          <div className="flex items-center gap-2">
+            <span className="text-xs text-stone-500 font-semibold hidden sm:inline">
+              Driving Cost:
+            </span>
+            <DrivingCostToggle mode={mode} onChange={handleModeChange} />
+          </div>
+        )}
       </div>
 
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
@@ -60,8 +97,29 @@ export default function BasketPanel({ branches, totals, basketItemCount }: Baske
                 <span className="text-3xl font-black text-stone-900 tracking-tight">
                   ${t.total.toFixed(2)}
                 </span>
-                <span className="text-xs text-stone-400 font-medium ml-1">total</span>
+                <span className="text-xs text-stone-400 font-medium ml-1">groceries</span>
               </div>
+
+              {/* Driving Cost Breakdown (FEAT-60) */}
+              {branch.distanceKm !== null && branch.distanceKm > 0 && (
+                <div className="mb-3 p-2.5 rounded-2xl bg-stone-50/80 border border-stone-200/60 text-xs">
+                  <div className="flex items-center justify-between text-stone-600 mb-1">
+                    <span className="flex items-center gap-1 font-medium text-stone-600">
+                      <Car className="w-3.5 h-3.5 text-stone-400" />
+                      Driving ({branch.distanceKm.toFixed(1)} km)
+                    </span>
+                    <span className="font-bold text-stone-900">
+                      +${calculateDrivingCost(branch.distanceKm, mode).toFixed(2)}
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between text-[11px] text-stone-400 pt-1 border-t border-stone-200/50">
+                    <span>{mode === "IRD_TRUE_COST" ? "IRD True Cost" : "Fuel Only"}</span>
+                    <span className="font-bold text-stone-800">
+                      Trip: ${(t.total + calculateDrivingCost(branch.distanceKm, mode)).toFixed(2)}
+                    </span>
+                  </div>
+                </div>
+              )}
 
               {hasMissing ? (
                 <div className="flex items-start gap-1.5 text-xs text-amber-700 bg-amber-50 p-2.5 rounded-2xl border border-amber-200/60">

@@ -5,6 +5,7 @@ Compare staple grocery prices across Auckland's major supermarkets (PAK'nSAVE, W
 ## Features
 
 - **Minimalist Modern Grocery Design (KC-UI-01)**: Soft pastel tints, pill badges, clean whitespace, and refined typography.
+- **IRD True Cost Mileage Rate Toggle (FEAT-60)**: Compare grocery trips using standard fuel-only estimates ($0.28/km) vs. the official IRD Tier 1 mileage rate ($0.95/km) accounting for full vehicle ownership costs (depreciation, WOF, Rego, maintenance, and insurance).
 - **Top 3 Distinct Supermarket Chain Detection (KC-STORY-02)**: Enforces brand diversity across PAK'nSAVE, Woolworths, and New World (fallback to The Warehouse) with smart 5 km-to-10 km radius fallback expansion.
 - **Suburb & Geolocation Selector**: Automatically finds the nearest branches within a 5 km radius (with fallback expansion) for 20+ Auckland suburbs.
 - **Pre-Populated Baseline Basket (KC-STORY-01)**: Pre-seeds quantity 1 for all 9 core staples on initial load so the Winner Verdict renders immediately.
@@ -104,6 +105,35 @@ The **Winner Verdict Hero Card** (`components/WinnerVerdictCard.tsx`) is positio
    - `deltaVsSecond = runnerUpTotal - winnerTotal`
    - `deltaVsThird = thirdTotal - winnerTotal`
    - `isMarginal = deltaVsSecond < 0.75`
+
+---
+
+## Driving Cost & IRD True Cost Mileage Toggle (FEAT-60)
+
+KaiCompare Auckland provides live driving mileage calculations to help shoppers determine whether driving to a cheaper store across Auckland is genuinely cost-effective.
+
+### Calculation Modes & Formulas (`lib/driving.ts`)
+
+Shoppers can toggle between two driving modes:
+
+1. **`FUEL` (Fuel Only)**:
+   - Focuses strictly on petrol consumption (~9.5L/100km @ ~$2.95/L NZ petrol prices).
+   - Rate: `DEFAULT_FUEL_RATE_PER_KM = $0.28/km`.
+   - Formula:
+     $$\text{Driving Cost} = \text{Distance (km)} \times \$0.28$$
+
+2. **`IRD_TRUE_COST` (Inland Revenue Tier 1 Mileage Rate)**:
+   - Standard NZ Inland Revenue (IRD) Tier 1 mileage rate.
+   - Rate: `IRD_MILEAGE_RATE_PER_KM = $0.95/km`.
+   - Formula:
+     $$\text{Driving Cost} = \text{Distance (km)} \times \$0.95$$
+   - **Tooltip Context**:
+     > *"Includes depreciation, WOF, Rego, maintenance, and insurance."*
+
+### UI Components (`DrivingCostToggle.tsx`, `ComparisonCard.tsx`, `WinnerVerdictCard.tsx`, `BasketPanel.tsx`)
+- **Interactive Tailwind Toggle**: Segmented pill switch with instant state transitions between Fuel and IRD True Cost.
+- **Info Icon & Tooltip**: Hover and tap-accessible info button displaying the IRD vehicle ownership cost scope.
+- **Hero & Card Integrations**: Displays driving costs and combined trip totals (`Groceries + Driving`) across the Winner Verdict hero card and One-Stop Shop store cards.
 
 ---
 

@@ -117,3 +117,15 @@ export interface SmartSplitResult {
   }>;
   splitGrandTotal: number;
 }
+
+// ─── Driving & Mileage Types (FEAT-60) ────────────────────────────────────────
+
+export type CalculationMode = "FUEL" | "IRD_TRUE_COST";
+
+export interface DrivingCostDetails {
+  distanceKm: number;
+  mode: CalculationMode;
+  cost: number;
+  roundTripCost: number;
+  ratePerKm: number;
+}
