@@ -8,6 +8,7 @@ import Header from "@/components/Header";
 import ComparisonGrid from "@/components/ComparisonGrid";
 import BasketPanel from "@/components/BasketPanel";
 import SmartSplitCard from "@/components/SmartSplitCard";
+import WinnerVerdictCard from "@/components/WinnerVerdictCard";
 import ShoppingListModal from "@/components/ShoppingListModal";
 import { List, Trash2 } from "lucide-react";
 
@@ -115,6 +116,12 @@ export default function AppClient({ items, chains, lastUpdated }: AppClientProps
             <strong>Note:</strong> Expanded radius to find your nearest branches.
           </div>
         )}
+
+        <WinnerVerdictCard
+          items={items}
+          basket={basket}
+          branches={activeBranches}
+        />
 
         <ComparisonGrid
           items={items}
