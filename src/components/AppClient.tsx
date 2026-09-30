@@ -17,6 +17,9 @@ import BasketPanel from "@/components/BasketPanel";
 import SmartSplitCard from "@/components/SmartSplitCard";
 import WinnerVerdictCard from "@/components/WinnerVerdictCard";
 import ShoppingListModal from "@/components/ShoppingListModal";
+import Footer from "@/components/Footer";
+import FeedbackModal from "@/components/FeedbackModal";
+import TermsModal from "@/components/TermsModal";
 import { List, Trash2 } from "lucide-react";
 
 interface AppClientProps {
@@ -33,6 +36,8 @@ export { DEFAULT_BASKET, DEFAULT_STAPLES_BASELINE };
 export default function AppClient({ items, chains, lastUpdated }: AppClientProps) {
   const [basket, setBasket] = useState<Basket>(() => createDefaultBasket());
   const [modalOpen, setModalOpen] = useState(false);
+  const [feedbackModalOpen, setFeedbackModalOpen] = useState(false);
+  const [termsModalOpen, setTermsModalOpen] = useState(false);
   const [coords, setCoords] = useState<{ lat: number; lng: number } | null>(null);
   const [suburbName, setSuburbName] = useState<string>("");
 
@@ -150,6 +155,12 @@ export default function AppClient({ items, chains, lastUpdated }: AppClientProps
         )}
       </main>
 
+      {/* Minimalist footer with utilities and disclaimers */}
+      <Footer
+        onOpenFeedback={() => setFeedbackModalOpen(true)}
+        onOpenTerms={() => setTermsModalOpen(true)}
+      />
+
       {/* Sticky action bar (minimalist pill aesthetics) */}
       {hasBasketItems && (
         <div className="fixed bottom-0 inset-x-0 bg-white/80 backdrop-blur-md border-t border-stone-200/60 shadow-xl z-40 safe-bottom">
@@ -191,6 +202,19 @@ export default function AppClient({ items, chains, lastUpdated }: AppClientProps
         onClose={() => setModalOpen(false)}
         result={smartSplit}
         branches={activeBranches}
+      />
+
+      {/* Feedback & Bug report modal (KC-ENG-02) */}
+      <FeedbackModal
+        isOpen={feedbackModalOpen}
+        onClose={() => setFeedbackModalOpen(false)}
+        suburbName={suburbName}
+      />
+
+      {/* Terms & Disclaimer modal (KC-LEGAL-01) */}
+      <TermsModal
+        isOpen={termsModalOpen}
+        onClose={() => setTermsModalOpen(false)}
       />
     </>
   );

@@ -11,6 +11,9 @@ Compare staple grocery prices across Auckland's major supermarkets (PAK'nSAVE, W
 - **Winner Verdict Hero Card (KC-STORY-03)**: Real-time hero card highlighting the overall cheapest supermarket and dynamic competitor price deltas.
 - **Smart Split Optimizer**: Multi-store routing that calculates maximum savings when splitting your haul across stores.
 - **Shopping List Modal**: Categorized breakdown with copy-to-clipboard functionality.
+- **Community Feedback & Bug Reporting (KC-ENG-02)**: In-app feedback modal with suburb detection, discrepancy categorization, and mailto fallback.
+- **Community Support (KC-GROWTH-01)**: Dedicated "Buy Me a Coffee" supporter entry point in the footer.
+- **Terms & Price Disclaimer (KC-LEGAL-01)**: Modal detailing independent consumer service terms, trademark non-affiliation, and pricing benchmark disclaimers.
 
 ---
 
@@ -81,6 +84,22 @@ The **Winner Verdict Hero Card** (`components/WinnerVerdictCard.tsx`) is positio
    - `deltaVsSecond = runnerUpTotal - winnerTotal`
    - `deltaVsThird = thirdTotal - winnerTotal`
    - `isMarginal = deltaVsSecond < 0.75`
+
+---
+
+## Footer Utilities & Legal Disclaimers (KC-ENG-02, KC-GROWTH-01, KC-LEGAL-01)
+
+The bottom footer (`components/Footer.tsx`) provides transparent utility links, community feedback channels, and legal protection:
+
+- **☕ Buy Me a Coffee (`KC-GROWTH-01`)**: Supporter link pill pointing to `https://buymeacoffee.com` to support ongoing hosting and cron scraper pipelines.
+- **💬 Feedback & Bug Report Modal (`KC-ENG-02`)**:
+  - Modal form for shoppers to report price discrepancies, submit bugs, or suggest features.
+  - Automatically identifies the active Auckland suburb for fast triaging.
+  - Provides a mock client success confirmation with auto-close as well as a direct mailto fallback.
+- **📄 Terms & Disclaimer Modal (`KC-LEGAL-01`)**:
+  - **Independent Service**: Clarifies that KaiCompare is an independent community project with no affiliation, endorsement, or sponsorship from Foodstuffs (PAK'nSAVE, New World), Woolworths NZ, or The Warehouse Group.
+  - **Price Disclaimer**: Notes that displayed prices are benchmark scraped estimates and that in-store promotions, local manager specials, or clubcard pricing may apply.
+  - **Limitation of Liability**: Explains free as-is provision for consumer informational purposes.
 
 ---
 
