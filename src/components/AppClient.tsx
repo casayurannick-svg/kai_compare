@@ -111,21 +111,21 @@ export default function AppClient({ items, chains, lastUpdated }: AppClientProps
       />
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pb-32">
-        {/* Intro banner */}
-        <div className="mb-6 rounded-2xl bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-100 px-5 py-4 flex items-start gap-3">
-          <span className="text-2xl">🇳🇿</span>
+        {/* Intro banner with soft warm pastel styling */}
+        <div className="mb-8 rounded-3xl bg-amber-50/70 border border-amber-200/60 px-5 py-4 flex items-start gap-3.5 shadow-2xs">
+          <span className="text-2xl shrink-0">🇳🇿</span>
           <div className="flex-1">
-            <p className="font-semibold text-slate-700 text-sm">
+            <p className="font-bold text-stone-800 text-sm">
               Compare staple grocery prices across Auckland&apos;s major supermarkets.
             </p>
-            <p className="text-slate-500 text-xs mt-0.5">
+            <p className="text-stone-600 text-xs mt-0.5 leading-relaxed">
               Select your suburb to find the nearest branches and see their specific prices. Add items to your basket to calculate the <b>Smart Split</b> savings.
             </p>
           </div>
         </div>
 
         {expanded && coords && (
-          <div className="mb-6 rounded-xl bg-blue-50 border border-blue-200 p-3 text-sm text-blue-700">
+          <div className="mb-8 rounded-2xl bg-sky-50/70 border border-sky-200/60 p-3.5 text-xs sm:text-sm text-sky-800 font-medium">
             <strong>Note:</strong> Expanded radius to find your nearest branches.
           </div>
         )}
@@ -150,17 +150,17 @@ export default function AppClient({ items, chains, lastUpdated }: AppClientProps
         )}
       </main>
 
-      {/* Sticky action bar (mobile-first) */}
+      {/* Sticky action bar (minimalist pill aesthetics) */}
       {hasBasketItems && (
-        <div className="fixed bottom-0 inset-x-0 bg-white/90 backdrop-blur-md border-t border-slate-100 shadow-2xl z-40 safe-bottom">
+        <div className="fixed bottom-0 inset-x-0 bg-white/80 backdrop-blur-md border-t border-stone-200/60 shadow-xl z-40 safe-bottom">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center gap-3">
             <div className="flex-1 min-w-0">
-              <p className="text-xs text-slate-500">
-                <span className="font-bold text-slate-700">{basketItemCount}</span> item type
+              <p className="text-xs text-stone-500 font-medium">
+                <span className="font-bold text-stone-800">{basketItemCount}</span> item type
                 {basketItemCount !== 1 ? "s" : ""} in basket
               </p>
               {smartSplit.savingsVsSingleCheapest > 0.01 && (
-                <p className="text-xs text-emerald-600 font-semibold truncate">
+                <p className="text-xs text-emerald-700 font-semibold truncate">
                   Smart Split saves you ${smartSplit.savingsVsSingleCheapest.toFixed(2)}!
                 </p>
               )}
@@ -168,7 +168,7 @@ export default function AppClient({ items, chains, lastUpdated }: AppClientProps
 
             <button
               onClick={clearBasket}
-              className="p-2.5 rounded-xl border border-slate-200 text-slate-400 hover:text-red-500 hover:border-red-200 transition-colors"
+              className="p-2.5 rounded-full border border-stone-200/80 text-stone-400 hover:text-rose-600 hover:border-rose-200 hover:bg-rose-50/50 transition-colors"
               aria-label="Clear basket"
             >
               <Trash2 className="w-4 h-4" />
@@ -176,7 +176,7 @@ export default function AppClient({ items, chains, lastUpdated }: AppClientProps
 
             <button
               onClick={() => setModalOpen(true)}
-              className="flex items-center gap-2 bg-amber-400 hover:bg-amber-500 text-slate-900 font-bold text-sm px-5 py-2.5 rounded-xl shadow-md transition-colors"
+              className="flex items-center gap-2 bg-stone-900 hover:bg-stone-800 text-white font-bold text-xs sm:text-sm px-5 py-2.5 rounded-full shadow-md transition-all active:scale-[0.98]"
             >
               <List className="w-4 h-4" />
               Shopping List

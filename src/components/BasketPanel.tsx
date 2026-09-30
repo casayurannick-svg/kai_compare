@@ -1,5 +1,5 @@
 import { StoreTotals, ResolvedBranch } from "@/lib/types";
-import { AlertCircle } from "lucide-react";
+import { AlertCircle, CheckCircle2, Trophy } from "lucide-react";
 
 interface BasketPanelProps {
   branches: ResolvedBranch[];
@@ -12,13 +12,20 @@ export default function BasketPanel({ branches, totals, basketItemCount }: Baske
 
   // Find the lowest total (that is > 0)
   const validTotals = totals.filter((t) => t.total > 0 && t.itemCount === basketItemCount);
-  const cheapestTotal = validTotals.length > 0
-    ? Math.min(...validTotals.map((t) => t.total))
-    : null;
+  const cheapestTotal =
+    validTotals.length > 0 ? Math.min(...validTotals.map((t) => t.total)) : null;
 
   return (
-    <section className="mt-12">
-      <h2 className="text-xl font-bold text-slate-900 mb-4 px-2">One-Stop Shop Totals</h2>
+    <section className="mt-14">
+      <div className="flex items-center gap-2 mb-4 px-1">
+        <h2 className="text-xl sm:text-2xl font-black text-stone-900 tracking-tight">
+          One-Stop Shop Totals
+        </h2>
+        <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-stone-100 text-stone-600 border border-stone-200/60">
+          Entire Basket
+        </span>
+      </div>
+
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         {totals.map((t) => {
           const branch = branches.find((b) => b.branchId === t.branchId)!;
@@ -26,41 +33,47 @@ export default function BasketPanel({ branches, totals, basketItemCount }: Baske
           const hasMissing = t.missingItems.length > 0;
 
           return (
-            <div 
+            <div
               key={t.branchId}
-              className={`p-4 rounded-2xl border ${
-                isCheapest 
-                  ? 'bg-emerald-50 border-emerald-200 shadow-sm' 
-                  : 'bg-white border-slate-200'
+              className={`p-5 rounded-3xl border transition-all ${
+                isCheapest
+                  ? "bg-emerald-50/70 border-emerald-200/80 shadow-sm"
+                  : "bg-white border-stone-200/70 shadow-2xs hover:shadow-sm"
               }`}
             >
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-2">
                   <span className="text-xl">{branch.logoEmoji}</span>
-                  <span className="font-bold text-slate-700 text-sm">{branch.branchDisplayName}</span>
+                  <span className="font-bold text-stone-800 text-sm">
+                    {branch.branchDisplayName}
+                  </span>
                 </div>
                 {isCheapest && (
-                  <span className="bg-emerald-500 text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full">
+                  <span className="inline-flex items-center gap-1 bg-emerald-100 text-emerald-900 border border-emerald-200/80 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full shadow-2xs">
+                    <Trophy className="w-2.5 h-2.5 text-amber-500" />
                     Winner
                   </span>
                 )}
               </div>
 
               <div className="mb-3">
-                <span className="text-3xl font-black text-slate-900">
+                <span className="text-3xl font-black text-stone-900 tracking-tight">
                   ${t.total.toFixed(2)}
                 </span>
-                <span className="text-xs text-slate-500 font-medium ml-1">total</span>
+                <span className="text-xs text-stone-400 font-medium ml-1">total</span>
               </div>
 
               {hasMissing ? (
-                <div className="flex items-start gap-1.5 text-xs text-amber-600 bg-amber-50 p-2 rounded-lg">
-                  <AlertCircle className="w-3.5 h-3.5 shrink-0 mt-0.5" />
-                  <p>Missing {t.missingItems.length} item{t.missingItems.length > 1 ? 's' : ''}</p>
+                <div className="flex items-start gap-1.5 text-xs text-amber-700 bg-amber-50 p-2.5 rounded-2xl border border-amber-200/60">
+                  <AlertCircle className="w-3.5 h-3.5 shrink-0 mt-0.5 text-amber-600" />
+                  <p>
+                    Missing {t.missingItems.length} item{t.missingItems.length > 1 ? "s" : ""}
+                  </p>
                 </div>
               ) : (
-                <div className="text-xs text-slate-400 font-medium px-1">
-                  All {t.itemCount} items found
+                <div className="inline-flex items-center gap-1.5 text-xs text-stone-500 font-medium px-2 py-1 bg-stone-50 rounded-full border border-stone-100">
+                  <CheckCircle2 className="w-3 h-3 text-emerald-600" />
+                  <span>All {t.itemCount} items found</span>
                 </div>
               )}
             </div>

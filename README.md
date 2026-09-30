@@ -4,12 +4,26 @@ Compare staple grocery prices across Auckland's major supermarkets (PAK'nSAVE, W
 
 ## Features
 
+- **Minimalist Modern Grocery Design (KC-UI-01)**: Soft pastel tints, pill badges, clean whitespace, and refined typography.
 - **Suburb & Geolocation Selector**: Automatically finds the nearest branches within a 5 km radius (with fallback expansion) for 20+ Auckland suburbs.
 - **Pre-Populated Baseline Basket (KC-STORY-01)**: Pre-seeds quantity 1 for all 9 core staples on initial load so the Winner Verdict renders immediately.
-- **Staples Comparison Grid**: Compare prices across 9 essential supermarket staples with interactive steppers.
+- **Staples Comparison Grid**: Compare prices across 9 essential supermarket staples with interactive pill steppers and lowest-price tags.
 - **Winner Verdict Hero Card (KC-STORY-03)**: Real-time hero card highlighting the overall cheapest supermarket and dynamic competitor price deltas.
 - **Smart Split Optimizer**: Multi-store routing that calculates maximum savings when splitting your haul across stores.
 - **Shopping List Modal**: Categorized breakdown with copy-to-clipboard functionality.
+
+---
+
+## Minimalist Modern Grocery Card Redesign (KC-UI-01)
+
+The interface follows modern e-grocery design aesthetics with a focus on scannability, soft color hierarchy, and tactile pill controls:
+
+- **Warm Neutral Palette**: Built on a warm `bg-stone-50` backdrop with soft diffused shadows (`shadow-sm`, `shadow-stone-200/50`) and crisp stone typography (`text-stone-900`, `text-stone-500`).
+- **Soft Pastel Card Tints**: Category and store cards feature gentle tints (`bg-amber-50/70`, `bg-emerald-50/70`, `bg-sky-50/70`, `bg-rose-50/50`) with subtle borders (`border-stone-200/60` and `border-black/5`).
+- **Minimalist Sticky Header**: Translucent frosted navigation bar (`backdrop-blur-md`) with brand mark, suburb pill dropdown selector, "Locate Me" pill button, and soft nearby branch chips.
+- **Fresh Grocery Hero Card (`WinnerVerdictCard.tsx`)**: Fresh sage/emerald banner layout with prominent winning store name, bold basket total, and neat runner-up savings pills (`Save $X.XX vs [Store]`).
+- **Clean Grocery Cards (`ComparisonGrid.tsx`)**: Replaced dense table borders with individual clean grocery cards featuring category subtitles, unit pricing, pill steppers (`-` `qty` `+`), and subtle `✓ Lowest` price tags.
+- **Smart Split & Action Drawer**: Restyled multi-store summary card, bottom action bar, and shopping list modal with pill buttons and soft card styling.
 
 ---
 

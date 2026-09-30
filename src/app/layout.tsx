@@ -33,7 +33,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en-NZ" className={geist.variable}>
-      <body className="antialiased bg-slate-50 font-sans min-h-screen">
+      <body className="antialiased bg-stone-50 font-sans min-h-screen text-stone-900">
         {children}
       </body>
     </html>
