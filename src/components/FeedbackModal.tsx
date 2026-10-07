@@ -70,8 +70,8 @@ export default function FeedbackModal({
     }, 2500);
   };
 
-  const mailtoUrl = `mailto:feedback@kaicompare.co.nz?subject=${encodeURIComponent(
-    `KaiCompare Auckland: ${category} (${effectiveSuburb})`
+  const mailtoUrl = `mailto:feedback@kaispy.co.nz?subject=${encodeURIComponent(
+    `KaiSpy Auckland: ${category} (${effectiveSuburb})`
   )}&body=${encodeURIComponent(
     `Category: ${category}\nSuburb: ${effectiveSuburb}\n\nMessage:\n${message}\n\nFrom: ${email || "Anonymous"}`
   )}`;

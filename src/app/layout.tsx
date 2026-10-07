@@ -14,13 +14,13 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "KaiCompare Auckland — Grocery Price Comparison",
+  title: "KaiSpy | Auckland Grocery Price Intelligence",
   description:
-    "Compare staple grocery prices across PAK'nSAVE, Woolworths, New World, and The Warehouse in Auckland, New Zealand. Find the cheapest basket and smart split savings.",
-  keywords: ["grocery prices", "Auckland", "supermarket comparison", "New Zealand", "PAK'nSAVE", "Woolworths", "New World"],
+    "Compare staple grocery prices across PAK'nSAVE, Woolworths, New World, and The Warehouse in Auckland, New Zealand with KaiSpy. Find the cheapest basket and smart split savings.",
+  keywords: ["grocery prices", "Auckland", "supermarket comparison", "New Zealand", "PAK'nSAVE", "Woolworths", "New World", "KaiSpy"],
   openGraph: {
-    title: "KaiCompare Auckland",
-    description: "Compare Auckland grocery prices & save money on your weekly shop.",
+    title: "KaiSpy | Auckland Grocery Price Intelligence",
+    description: "Compare Auckland grocery prices & save money on your weekly shop with KaiSpy.",
     locale: "en_NZ",
     type: "website",
   },

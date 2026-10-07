@@ -34,7 +34,7 @@ export default function Header({
             </div>
             <div className="flex items-baseline gap-1.5">
               <h1 className="text-xl sm:text-2xl font-black tracking-tight text-stone-900">
-                Kai<span className="text-emerald-700">Compare</span>
+                Kai<span className="text-emerald-700">Spy</span>
               </h1>
               <span className="px-2 py-0.5 rounded-full bg-stone-100 text-stone-600 font-semibold text-[10px] tracking-wide border border-stone-200/60">
                 Auckland

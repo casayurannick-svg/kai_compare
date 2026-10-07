@@ -36,7 +36,7 @@ export default function ShoppingListModal({
   };
 
   const copyToClipboard = () => {
-    const textLines = ["🛒 KaiCompare Shopping List\n"];
+    const textLines = ["🛒 KaiSpy Shopping List\n"];
 
     result.splitPlan.forEach((step) => {
       textLines.push(`📍 ${step.branchDisplayName}`);

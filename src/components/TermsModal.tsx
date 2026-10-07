@@ -68,7 +68,7 @@ export default function TermsModal({ isOpen, onClose }: TermsModalProps) {
               1. Independent Service
             </h3>
             <p className="text-xs sm:text-sm text-stone-600">
-              KaiCompare is an independent, community-driven consumer service. We are{" "}
+              KaiSpy is an independent, community-driven consumer service. We are{" "}
               <strong>not affiliated with, endorsed by, or sponsored by</strong> Foodstuffs New
               Zealand (operators of PAK&apos;nSAVE and New World), Woolworths New Zealand Limited, or
               The Warehouse Group. All registered trademarks, logos, and supermarket brand names
@@ -97,7 +97,7 @@ export default function TermsModal({ isOpen, onClose }: TermsModalProps) {
               3. Limitation of Liability
             </h3>
             <p className="text-xs sm:text-sm text-stone-600">
-              KaiCompare is provided free of charge on an &ldquo;as is&rdquo; and &ldquo;as
+              KaiSpy is provided free of charge on an &ldquo;as is&rdquo; and &ldquo;as
               available&rdquo; basis for informational purposes only. We make no warranties regarding
               uninterrupted service or absolute real-time accuracy. Users are encouraged to verify
               pricing directly at checkout before making purchasing decisions.

@@ -1,5 +1,5 @@
 # ─────────────────────────────────────────────────────────────────────────────
-# KaiCompare Auckland — Automated Price Scraper Blueprint
+# KaiSpy — Automated Price Scraper Blueprint
 # ─────────────────────────────────────────────────────────────────────────────
 #
 # HOW IT WORKS:
@@ -14,7 +14,7 @@
 #
 # SETUP REQUIRED (one-time):
 #   - In GitHub repo Settings → Secrets → Actions, add:
-#       SCRAPER_USER_AGENT  (your scraper UA string, e.g. "KaiCompare/1.0")
+#       SCRAPER_USER_AGENT  (your scraper UA string, e.g. "KaiSpy/1.0")
 #   - Ensure the repo has "Read and write permissions" under
 #     Settings → Actions → General → Workflow permissions.
 # ─────────────────────────────────────────────────────────────────────────────
@@ -84,8 +84,8 @@ jobs:
       - name: Commit updated prices
         if: steps.check_diff.outputs.changed == 'true'
         run: |
-          git config user.name "KaiCompare Bot"
-          git config user.email "bot@kaicompare.nz"
+          git config user.name "KaiSpy Bot"
+          git config user.email "bot@kaispy.nz"
           git add data/auckland_staples.json
           git commit -m "chore(prices): auto-update Auckland grocery prices [$(date -u +%Y-%m-%d)]"
           git push

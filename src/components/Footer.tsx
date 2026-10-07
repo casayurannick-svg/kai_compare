@@ -48,13 +48,13 @@ export default function Footer({ onOpenFeedback, onOpenTerms }: FooterProps) {
         {/* Brand & copyright notice */}
         <div className="space-y-1.5 max-w-2xl">
           <p className="text-xs sm:text-sm font-bold text-stone-700 flex items-center justify-center gap-1.5">
-            KaiCompare Auckland &bull; Made with <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500 inline" /> for Kiwi shoppers
+            KaiSpy &bull; Made with <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500 inline" /> for Kiwi shoppers
           </p>
           <p className="text-[11px] sm:text-xs text-stone-500 leading-relaxed">
             Independent community tool. Not affiliated with, endorsed by, or sponsored by Foodstuffs (PAK&apos;nSAVE, New World), Woolworths New Zealand, or The Warehouse Group.
           </p>
           <p className="text-[11px] text-stone-400">
-            &copy; {new Date().getFullYear()} KaiCompare. All grocery trademarks remain the property of their respective owners.
+            &copy; {new Date().getFullYear()} KaiSpy. All grocery trademarks remain the property of their respective owners.
           </p>
         </div>
       </div>

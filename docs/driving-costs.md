@@ -1,12 +1,12 @@
 # Driving Cost & IRD True Cost Mileage Logic (FEAT-60)
 
-KaiCompare Auckland incorporates real-world driving mileage calculations into supermarket comparisons. When evaluating whether driving across Auckland to shop at a cheaper supermarket is worth it, shoppers can evaluate both **Fuel-Only** costs and the **IRD True Cost of Driving**.
+KaiSpy incorporates real-world driving mileage calculations into supermarket comparisons. When evaluating whether driving across Auckland to shop at a cheaper supermarket is worth it, shoppers can evaluate both **Fuel-Only** costs and the **IRD True Cost of Driving**.
 
 ---
 
 ## 1. Calculation Modes (`CalculationMode`)
 
-KaiCompare supports two driving calculation modes:
+KaiSpy supports two driving calculation modes:
 
 1. **`FUEL` (Fuel Only)**:
    - Evaluates estimated petrol expenditure based on average Auckland fleet consumption (~9.5L/100km @ ~$2.95/L NZ petrol prices).

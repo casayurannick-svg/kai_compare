@@ -1,4 +1,5 @@
-# KaiCompare Auckland 🛒🇳🇿
+# KaiSpy 🛒🇳🇿
+### Auckland Grocery Price Intelligence
 
 Compare staple grocery prices across Auckland's major supermarkets (PAK'nSAVE, Woolworths NZ, New World, and The Warehouse). Find the best one-stop shop, discover real-time competitor savings, or use the Smart Split optimizer to split your haul across nearby stores.
 
@@ -21,7 +22,7 @@ Compare staple grocery prices across Auckland's major supermarkets (PAK'nSAVE, W
 
 ## Top 3 Distinct Supermarket Chain Detection & Radius Fallback (KC-STORY-02)
 
-To ensure shoppers compare truly diverse market options rather than multiple branches of the same chain (e.g. two Woolworths branches), KaiCompare Auckland enforces a **brand diversity rule** paired with a smart **5 km to 10 km radius expansion**:
+To ensure shoppers compare truly diverse market options rather than multiple branches of the same chain (e.g. two Woolworths branches), KaiSpy enforces a **brand diversity rule** paired with a smart **5 km to 10 km radius expansion**:
 
 ### Selection Logic (`lib/auckland_locations.ts`, `lib/verdict.ts`)
 1. **Target Competitor Chains**: Primary target competitor chains are **PAK'nSAVE**, **Woolworths NZ**, and **New World**, with **The Warehouse** serving as an automatic fallback competitor.
@@ -53,7 +54,7 @@ The interface follows modern e-grocery design aesthetics with a focus on scannab
 
 ## Pre-Populated Default Staples Basket (KC-STORY-01)
 
-To provide an instant high-value comparison on initial page load, KaiCompare pre-seeds the basket state with a baseline quantity of **1** for all 9 core staples (`DEFAULT_STAPLES_BASELINE`):
+To provide an instant high-value comparison on initial page load, KaiSpy pre-seeds the basket state with a baseline quantity of **1** for all 9 core staples (`DEFAULT_STAPLES_BASELINE`):
 
 | Core Staple | Initial Quantity | Dataset Item ID |
 | :--- | :---: | :--- |
@@ -110,7 +111,7 @@ The **Winner Verdict Hero Card** (`components/WinnerVerdictCard.tsx`) is positio
 
 ## Driving Cost & IRD True Cost Mileage Toggle (FEAT-60)
 
-KaiCompare Auckland provides live driving mileage calculations to help shoppers determine whether driving to a cheaper store across Auckland is genuinely cost-effective.
+KaiSpy provides live driving mileage calculations to help shoppers determine whether driving to a cheaper store across Auckland is genuinely cost-effective.
 
 ### Calculation Modes & Formulas (`lib/driving.ts`)
 
@@ -150,7 +151,7 @@ The bottom footer (`components/Footer.tsx`) provides transparent utility links, 
   - Automatically identifies the active Auckland suburb for fast triaging.
   - Provides a mock client success confirmation with auto-close as well as a direct mailto fallback.
 - **📄 Terms & Disclaimer Modal (`KC-LEGAL-01`)**:
-  - **Independent Service**: Clarifies that KaiCompare is an independent community project with no affiliation, endorsement, or sponsorship from Foodstuffs (PAK'nSAVE, New World), Woolworths NZ, or The Warehouse Group.
+  - **Independent Service**: Clarifies that KaiSpy is an independent community project with no affiliation, endorsement, or sponsorship from Foodstuffs (PAK'nSAVE, New World), Woolworths NZ, or The Warehouse Group.
   - **Price Disclaimer**: Notes that displayed prices are benchmark scraped estimates and that in-store promotions, local manager specials, or clubcard pricing may apply.
   - **Limitation of Liability**: Explains free as-is provision for consumer informational purposes.
 
@@ -158,7 +159,7 @@ The bottom footer (`components/Footer.tsx`) provides transparent utility links, 
 
 ## Contributing & Support
 
-If you find KaiCompare useful for saving on Auckland grocery runs:
+If you find KaiSpy useful for saving on Auckland grocery runs:
 - **Direct Support:** Tip the developer via Revolut at [`https://revolut.me/ncasayuran`](https://revolut.me/ncasayuran) or click `"☕ Buy Me a Coffee"` in the site footer.
 - **Custom Donation URL:** Override the default link by setting `NEXT_PUBLIC_DONATION_URL` in your `.env.local`:
   ```bash
